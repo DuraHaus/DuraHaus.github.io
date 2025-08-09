@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="DuraHaus Painting and Construction Logo">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700;900&family=Poppins:wght@700;800;900&display=swap');
+      .word { font-family: "Poppins", Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #000000; }
+      .big { font-weight: 900; font-size: 110px; letter-spacing: 1.4px; }
+      .small { font-weight: 700; font-size: 36px; letter-spacing: 2.8px; opacity: .98; }
+      .icon { stroke: #000000; stroke-width: 16; fill: none; stroke-linejoin:miter; stroke-linecap:square; }
+    </style>
+  </defs>
+
+  <!-- House icon (balanced to user's sample) -->
+  <g transform="translate(40,50)">
+    <path class="icon" d="M10 150 L140 50 L270 150" />
+    <path class="icon" d="M50 150 L50 230 L230 230 L230 150" />
+  </g>
+
+  <!-- Text block -->
+  <g transform="translate(320, 120)">
+    <text class="word big">DURAHAUS</text>
+    <text class="word small" y="78">PAINTING AND CONSTRUCTION</text>
+  </g>
+</svg>
