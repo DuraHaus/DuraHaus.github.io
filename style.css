@@ -119,3 +119,15 @@ nav a:hover{opacity:1}
   opacity:.2; pointer-events:none;
 }
 @media (max-width:560px){ .seal{height:44px} .watermark::after{width:64px;height:64px} }
+/* Make header logo bigger */
+.brandmark {
+  height: 40px;        /* try 40–50px for desktop */
+  max-height: 40px;    /* keeps proportions consistent */
+}
+
+@media (min-width: 900px) {
+  .brandmark {
+    height: 50px;      /* larger size for bigger screens */
+    max-height: 50px;
+  }
+}
