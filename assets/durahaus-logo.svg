@@ -1,19 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg"
-     viewBox="0 0 900 220"
-     preserveAspectRatio="xMinYMid meet"
-     role="img" aria-label="DURAHAUS — Painting and Construction">
-  <!-- House outline (square style) -->
-  <path d="M90 168 V92 L140 48 L190 92 V168 Z"
-        fill="none" stroke="#fff" stroke-width="14"
-        stroke-linejoin="round" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" role="img" aria-label="DURAHAUS — Painting and Construction">
+  <title>DURAHAUS — Painting and Construction</title>
 
-  <!-- Wordmark -->
-  <g fill="#fff" font-family="Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
-    <!-- Main Name -->
-    <text x="240" y="112" font-size="78" font-weight="800" letter-spacing="1.5">DURAHAUS</text>
-    <!-- Tagline visually centered under main name -->
-    <text x="240" y="160" font-size="28" font-weight="600" letter-spacing="2">
-      PAINTING AND CONSTRUCTION
-    </text>
-  </g>
+  <!-- style: pure white on transparent; uses fonts you already load on the site -->
+  <style>
+    .mark { fill: none; stroke: #fff; stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; }
+    .word { fill: #fff; font-family: "Poppins", Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .brand { font-weight: 800; font-size: 96px; letter-spacing: 2px; }
+    .tag   { font-weight: 600; font-size: 36px; letter-spacing: 2.5px; }
+  </style>
+
+  <!-- left house icon (square-ish with balanced roof) -->
+  <path class="mark"
+        d="M60 190 V110 L120 60 L180 110 V190 H60 Z" />
+
+  <!-- Brand text block -->
+  <!-- TextLength keeps the tagline ending directly under the 'S' of DURAHAUS -->
+  <text class="word brand" x="240" y="135" textLength="520" lengthAdjust="spacingAndGlyphs">DURAHAUS</text>
+  <text class="word tag"   x="240" y="185" textLength="520" lengthAdjust="spacingAndGlyphs">PAINTING AND CONSTRUCTION</text>
 </svg>
