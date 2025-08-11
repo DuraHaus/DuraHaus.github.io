@@ -1,16 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120" role="img" aria-label="DuraHaus logo">
-  <style>
-    .house, .main-text, .sub-text { fill: #fff; }
-    .main-text { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 36px; }
-    .sub-text { font-family: 'Poppins', sans-serif; font-weight: 400; font-size: 16px; letter-spacing: 1px; }
-  </style>
-  
-  <!-- House Outline -->
-  <path class="house" d="M20 90 V45 L60 10 L100 45 V90 Z" stroke="#fff" stroke-width="6" fill="none" stroke-linejoin="round"/>
-  
-  <!-- Main Company Name -->
-  <text x="120" y="55" class="main-text">DURAHAUS</text>
-  
-  <!-- Subtext -->
-  <text x="120" y="85" class="sub-text">PAINTING AND CONSTRUCTION</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" role="img" aria-label="DuraHaus logo">
+  <!-- House outline (longer verticals), pure outline -->
+  <path d="M24 92 V40 L68 6 L112 40 V92 Z"
+        fill="none" stroke="#ffffff" stroke-width="8"
+        stroke-linejoin="round" stroke-linecap="butt"/>
+
+  <!-- Main wordmark -->
+  <text x="140" y="62"
+        fill="#ffffff"
+        font-family="Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+        font-size="42"
+        font-weight="800"
+        letter-spacing="0.5">
+    DURAHAUS
+  </text>
+
+  <!-- Tagline -->
+  <text x="140" y="92"
+        fill="#ffffff"
+        font-family="Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+        font-size="18"
+        font-weight="500"
+        letter-spacing="2.2">
+    PAINTING AND CONSTRUCTION
+  </text>
 </svg>
