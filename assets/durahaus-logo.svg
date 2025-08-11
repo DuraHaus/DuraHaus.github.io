@@ -1,26 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" role="img" aria-label="DuraHaus logo">
-  <!-- House outline (longer verticals), pure outline -->
-  <path d="M24 92 V40 L68 6 L112 40 V92 Z"
-        fill="none" stroke="#ffffff" stroke-width="8"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" role="img" aria-label="DuraHaus logo (white)">
+  <!-- House outline: squarer with slightly longer verticals -->
+  <path d="M28 94 V44 L72 18 L116 44 V94 Z"
+        fill="none" stroke="#fff" stroke-width="8"
         stroke-linejoin="round" stroke-linecap="butt"/>
 
-  <!-- Main wordmark -->
-  <text x="140" y="62"
-        fill="#ffffff"
-        font-family="Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-        font-size="42"
-        font-weight="800"
-        letter-spacing="0.5">
-    DURAHAUS
-  </text>
+  <!-- Wordmark and tagline are right-aligned to the same x so endings line up -->
+  <!-- Adjust this x if you ever want both lines to end earlier/later together -->
+  <g fill="#fff" font-family="Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+    <!-- Main wordmark -->
+    <text x="520" y="62" text-anchor="end" font-size="42" font-weight="800" letter-spacing="0.5">
+      DURAHAUS
+    </text>
 
-  <!-- Tagline -->
-  <text x="140" y="92"
-        fill="#ffffff"
-        font-family="Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-        font-size="18"
-        font-weight="500"
-        letter-spacing="2.2">
-    PAINTING AND CONSTRUCTION
-  </text>
+    <!-- Tagline: ends at the exact same x so the final N sits under the S above -->
+    <text x="520" y="92" text-anchor="end" font-size="18" font-weight="600" letter-spacing="2.2">
+      PAINTING AND CONSTRUCTION
+    </text>
+  </g>
 </svg>
