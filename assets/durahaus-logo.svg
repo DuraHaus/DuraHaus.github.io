@@ -1,18 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" role="img" aria-label="DuraHaus — Painting and Construction" preserveAspectRatio="xMidYMid meet">
-  <defs>
-    <style>
-      .stroke { fill:none; stroke:#fff; stroke-width:8; stroke-linecap:round; stroke-linejoin:round; }
-      .text-main { fill:#fff; font-family:Poppins, Arial, sans-serif; font-weight:800; font-size:48px; }
-      .text-sub { fill:#fff; font-family:Poppins, Arial, sans-serif; font-weight:600; font-size:16px; letter-spacing:2px; }
-    </style>
-  </defs>
-
-  <!-- House outline -->
-  <path class="stroke" d="M20 80 L70 30 L120 80 V130 H20 Z" />
-
-  <!-- Main text -->
-  <text class="text-main" x="140" y="70">DURAHAUS</text>
-
-  <!-- Sub text -->
-  <text class="text-sub" x="140" y="105">PAINTING AND CONSTRUCTION</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120" role="img" aria-label="DuraHaus logo">
+  <style>
+    .house, .main-text, .sub-text { fill: #fff; }
+    .main-text { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 36px; }
+    .sub-text { font-family: 'Poppins', sans-serif; font-weight: 400; font-size: 16px; letter-spacing: 1px; }
+  </style>
+  
+  <!-- House Outline -->
+  <path class="house" d="M20 90 V45 L60 10 L100 45 V90 Z" stroke="#fff" stroke-width="6" fill="none" stroke-linejoin="round"/>
+  
+  <!-- Main Company Name -->
+  <text x="120" y="55" class="main-text">DURAHAUS</text>
+  
+  <!-- Subtext -->
+  <text x="120" y="85" class="sub-text">PAINTING AND CONSTRUCTION</text>
 </svg>
