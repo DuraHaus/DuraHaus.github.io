@@ -171,3 +171,24 @@ nav a:focus-visible{outline:2px solid var(--brand); outline-offset:4px; border-r
   background:url('/assets/seal-white.png') center/contain no-repeat; opacity:.2; pointer-events:none
 }
 @media (max-width:560px){ .seal{height:44px} .watermark::after{width:64px;height:64px} }
+/* ==== Hotfix: bigger logo + better mobile balance ==== */
+
+/* Force logo size by width so it ignores extra blank space in the SVG */
+.brandmark{
+  width: 170px;     /* try 170–200px */
+  height: auto;
+  display: block;
+}
+
+/* Larger on desktop */
+@media (min-width: 900px){
+  .brandmark{ width: 210px; }
+}
+
+/* Slightly more side padding on small screens so content doesn't feel left-heavy */
+@media (max-width: 560px){
+  .container{ padding: 0 24px; } /* was 20px */
+}
+
+/* Optional: tiny header spacing bump so larger logo doesn't feel cramped */
+.site-header .inner{ padding: 18px 0; }
