@@ -1,24 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200" role="img" aria-label="DURAHAUS — Painting and Construction">
-  <!-- House: squarer outline, proportions and stroke to match the reference -->
-  <path d="M90 158 V92 L140 52 L190 92 V158 Z"
-        fill="none"
-        stroke="#fff"
-        stroke-width="12"
-        stroke-linejoin="round"
-        stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 900 220"
+     preserveAspectRatio="xMinYMid meet"
+     role="img" aria-label="DURAHAUS — Painting and Construction">
+  <!-- House outline (square style) -->
+  <path d="M90 168 V92 L140 48 L190 92 V168 Z"
+        fill="none" stroke="#fff" stroke-width="14"
+        stroke-linejoin="round" stroke-linecap="round"/>
 
-  <!-- Wordmark + tagline: left-aligned, with tuned tracking -->
+  <!-- Wordmark -->
   <g fill="#fff" font-family="Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
-    <!-- DURAHAUS -->
-    <text x="240" y="108"
-          font-size="72"
-          font-weight="800"
-          letter-spacing="1.5">DURAHAUS</text>
-
-    <!-- PAINTING AND CONSTRUCTION -->
-    <text x="240" y="152"
-          font-size="30"
-          font-weight="700"
-          letter-spacing="4">PAINTING AND CONSTRUCTION</text>
+    <!-- Main Name -->
+    <text x="240" y="112" font-size="78" font-weight="800" letter-spacing="1.5">DURAHAUS</text>
+    <!-- Tagline visually centered under main name -->
+    <text x="240" y="160" font-size="28" font-weight="600" letter-spacing="2">
+      PAINTING AND CONSTRUCTION
+    </text>
   </g>
 </svg>
