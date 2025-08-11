@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 140" role="img" aria-label="DuraHaus — Painting and Construction" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" role="img" aria-label="DuraHaus — Painting and Construction" preserveAspectRatio="xMidYMid meet">
   <defs>
     <style>
-      .w{fill:#fff}
-      .s{fill:none;stroke:#fff;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
-      .h1{font:800 46px/1.1 Inter, Poppins, Arial, sans-serif; letter-spacing:.4px}
-      .h2{font:600 16px/1 Inter, Poppins, Arial, sans-serif; opacity:.92; letter-spacing:2px}
+      .stroke { fill:none; stroke:#fff; stroke-width:8; stroke-linecap:round; stroke-linejoin:round; }
+      .text-main { fill:#fff; font-family:Poppins, Arial, sans-serif; font-weight:800; font-size:48px; }
+      .text-sub { fill:#fff; font-family:Poppins, Arial, sans-serif; font-weight:600; font-size:16px; letter-spacing:2px; }
     </style>
   </defs>
 
-  <!-- House (verticals extended a hair; optically centered) -->
-  <!-- Roof apex at (72,34). Base lowered to y=118 for longer verticals -->
-  <path class="s" d="M28 76 L72 34 L116 76 V118 H28 Z"/>
+  <!-- House outline -->
+  <path class="stroke" d="M20 80 L70 30 L120 80 V130 H20 Z" />
 
-  <!-- Wordmark (aligned to house with ~20px optical gap) -->
-  <text class="w h1" x="136" y="68">DURAHAUS</text>
-  <text class="w h2" x="136" y="104">PAINTING AND CONSTRUCTION</text>
+  <!-- Main text -->
+  <text class="text-main" x="140" y="70">DURAHAUS</text>
+
+  <!-- Sub text -->
+  <text class="text-sub" x="140" y="105">PAINTING AND CONSTRUCTION</text>
 </svg>
