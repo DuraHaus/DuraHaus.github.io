@@ -4,18 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Request a Quote — DuraHaus</title>
-  <meta name="description" content="Request a free painting & coatings estimate.">
+  <meta name="description" content="Request a professional painting quote from DuraHaus. Fast estimates, tidy jobsites, results that last.">
   <link rel="preload" as="image" href="/assets/stock-hero.webp">
-  <!-- styles: identical to index -->
   <style>
-    :root{--bg:#0a0a0a;--panel:#101010;--ink:#fff;--muted:#bdbdbd;--line:#1a1a1a;--max:1120px;--r:14px;--gap:28px}
-    *{box-sizing:border-box}html,body{height:100%}
-    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    :root{
+      --bg:#0a0a0a; --panel:#101010; --ink:#ffffff; --muted:#bdbdbd;
+      --line:#1a1a1a; --max:1120px; --r:14px; --gap:28px;
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--ink);
+      font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
     a{color:inherit;text-decoration:none}
     img{display:block;width:100%;height:auto;background:#0d0d0d}
     .brand img{background:transparent!important}
     .container{max-width:var(--max);margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
+
+    /* Header (matches index) */
+    header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.92);
+      backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
     .brand{display:flex;align-items:center;gap:14px;min-width:0}
     .brand picture{display:block;line-height:0}
@@ -26,38 +33,79 @@
     .cta{background:#fff;color:#000;border-color:#fff;font-weight:700}
     .iconbtn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line);border-radius:999px}
     .iconbtn svg{width:18px;height:18px;fill:#fff}
-    @media (max-width:600px){.nav{padding:10px 0}.brand img{height:44px}.pill{font-size:13px;padding:.45rem .7rem}.iconbtn{width:38px;height:38px}}
-    .hero{display:grid;grid-template-columns:1fr;background:#0c0c0c;border-bottom:1px solid var(--line)}
-    .hero__media{position:relative;aspect-ratio:16/9;max-height:70vh;overflow:hidden}
-    .hero__media img{width:100%;height:100%;object-fit:cover;opacity:.95;filter:grayscale(1) contrast(1.05)}
-    .hero__copy{padding:3rem 0}
-    h1{margin:0 0 .6rem;font-size:clamp(32px,5.2vw,56px)}
-    .lead{color:var(--muted);font-size:clamp(16px,1.8vw,19px)}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:1.2rem}
-    label{display:block;margin:.6rem 0 .25rem;color:var(--muted)}
-    input,textarea{width:100%;padding:.8rem;border-radius:10px;border:1px solid var(--line);background:#0c0c0c;color:#fff}
-    textarea{min-height:120px;resize:vertical}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.1rem;border-radius:12px;border:1px solid var(--line)}
+    @media (max-width:600px){
+      .nav{padding:10px 0}
+      .brand img{height:44px}
+      .pill{font-size:13px;padding:.45rem .7rem}
+      .iconbtn{width:38px;height:38px}
+    }
+
+    /* Page header */
+    .pagehead{border-bottom:1px solid var(--line);background:#0c0c0c}
+    .pagehead .wrap{display:grid;gap:var(--gap);grid-template-columns:1fr}
+    .pagehead h1{margin:0;padding:2.2rem 0;font-size:clamp(30px,4.6vw,48px);line-height:1.08;letter-spacing:-.01em}
+    .pagehead p{color:var(--muted);margin:-8px 0 22px}
+
+    /* Form + info layout */
+    .grid{display:grid;gap:var(--gap);grid-template-columns:1fr}
+    @media (min-width:900px){.grid{grid-template-columns:1.15fr .85fr}}
+
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+    .pad{padding:1.15rem}
+
+    /* Form */
+    form{display:grid;gap:14px}
+    label{display:block;font-weight:600;margin:2px 0 6px}
+    .field{display:block}
+    input, select, textarea{
+      width:100%;background:#0c0c0c;border:1px solid var(--line);color:var(--ink);
+      border-radius:10px;padding:.8rem .9rem;font:inherit;outline:none;
+    }
+    textarea{min-height:140px;resize:vertical}
+    .row{display:grid;gap:14px;grid-template-columns:1fr}
+    @media (min-width:680px){.row{grid-template-columns:1fr 1fr}}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.15rem;border-radius:12px;border:1px solid var(--line)}
     .btn--light{background:#fff;color:#000;border-color:#fff;font-weight:700}
+    .help{color:var(--muted);font-size:.92rem}
+
+    /* Contact block (with mini pills) */
+    .contact h3{margin:.1rem 0 .6rem;font-size:1.2rem}
+    .list{display:grid;gap:10px}
+    .item{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:12px;padding:.85rem 1rem}
+    .mini{display:inline-flex;gap:8px;flex-wrap:wrap}
+    .mini a{padding:.45rem .7rem;border:1px solid var(--line);border-radius:999px;font-size:13px}
+
+    /* Pre‑footer (stamp + mini nav) */
     .prefooter{margin:3rem auto 1.5rem;display:flex;gap:22px;align-items:center;justify-content:space-between;flex-wrap:wrap}
     .prefooter .stampwrap{display:flex;align-items:center;gap:14px}
     .prefooter img{width:128px;height:auto;opacity:.95;filter:invert(1) brightness(1.6);background:transparent}
     .prefooter .menu{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-    @media (max-width:720px){.prefooter{justify-content:center;text-align:center}.prefooter .menu{justify-content:center}}
-    footer{border-top:1px solid var(--line);margin-top:2rem}.foot{display:grid;gap:18px;align-items:center;padding:1.2rem 0;grid-template-columns:1fr}small{color:var(--muted)}
+    @media (max-width:720px){
+      .prefooter{justify-content:center;text-align:center}
+      .prefooter .menu{justify-content:center}
+    }
+
+    /* Footer */
+    footer{border-top:1px solid var(--line);margin-top:2rem}
+    .foot{display:grid;gap:18px;align-items:center;padding:1.2rem 0;grid-template-columns:1fr}
+    small{color:var(--muted)}
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <div class="container nav">
       <a class="brand" href="/" aria-label="DuraHaus home">
         <picture>
           <source srcset="/assets/durahaus-logo.svg" type="image/svg+xml">
           <source srcset="/assets/durahaus-logo.png" type="image/png">
-          <img src="/assets/durahaus-logo.jpg" alt="DuraHaus logo" onerror="this.closest('.brand').querySelector('.wordmark').style.display='block'">
+          <img src="/assets/durahaus-logo.jpg" alt="DuraHaus logo"
+               onerror="this.closest('.brand').querySelector('.wordmark').style.display='block'">
         </picture>
         <span class="wordmark" style="display:none">DURAHAUS</span>
       </a>
+
       <nav class="navlinks" aria-label="Primary">
         <a href="/services.html" class="pill">Services</a>
         <a href="/projects.html" class="pill">Projects</a>
@@ -70,35 +118,130 @@
     </div>
   </header>
 
-  <section class="hero">
-    <div class="hero__media"><img src="/assets/stock-hero.webp" alt="Quote"></div>
-    <div class="hero__copy container">
+  <!-- Page head -->
+  <section class="pagehead">
+    <div class="container wrap">
       <h1>Request a Quote</h1>
-      <p class="lead">Tell us about your project and we’ll follow up quickly with a time to visit.</p>
+      <p>Tell us a little about your project. We’ll follow up quickly with next steps.</p>
     </div>
   </section>
 
-  <section class="container" style="margin:2rem auto">
-    <form class="card" name="quote" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="quote">
-      <label for="name">Name</label><input id="name" name="name" required>
-      <label for="email">Email</label><input id="email" name="email" type="email" required>
-      <label for="phone">Phone</label><input id="phone" name="phone" inputmode="tel">
-      <label for="scope">Project details</label><textarea id="scope" name="scope" placeholder="Interior, exterior, cabinets, concrete, drywall…"></textarea>
-      <div style="margin-top:1rem"><button class="btn btn--light" type="submit">Send Request</button></div>
-    </form>
+  <!-- Form + Contact -->
+  <section class="container" style="margin:2rem 0 3rem">
+    <div class="grid">
+      <!-- Quote form -->
+      <div class="card">
+        <div class="pad">
+          <!-- Replace action with your Formspree/Netlify endpoint -->
+          <form method="POST" action="https://formspree.io/f/your-id-here">
+            <div class="row">
+              <div>
+                <label for="name">Name</label>
+                <input class="field" id="name" name="name" autocomplete="name" required>
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input class="field" id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="phone">Phone</label>
+                <input class="field" id="phone" name="phone" type="tel" autocomplete="tel">
+              </div>
+              <div>
+                <label for="service">Service</label>
+                <select class="field" id="service" name="service">
+                  <option value="Interior Painting">Interior Painting</option>
+                  <option value="Exterior Painting">Exterior Painting</option>
+                  <option value="Cabinet Refinishing">Cabinet Refinishing</option>
+                  <option value="Concrete Coatings">Concrete Coatings</option>
+                  <option value="Staining & Wood Care">Staining & Wood Care</option>
+                  <option value="Drywall & Repair">Drywall & Repair</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="address">Project Address (optional)</label>
+              <input class="field" id="address" name="address" autocomplete="street-address">
+            </div>
+
+            <div>
+              <label for="details">Project Details</label>
+              <textarea class="field" id="details" name="details" placeholder="Surfaces, colors, timing, anything helpful…"></textarea>
+            </div>
+
+            <div class="help">By submitting, you agree we may contact you about your project.</div>
+
+            <button class="btn btn--light" type="submit">Send Request</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contact info block -->
+      <aside class="card contact">
+        <div class="pad">
+          <h3>Contact</h3>
+          <div class="list">
+            <div class="item">
+              <div>
+                <strong>Email</strong><br>
+                <span class="help">durahaus.solutions@gmail.com</span>
+              </div>
+              <div class="mini">
+                <a href="mailto:durahaus.solutions@gmail.com" aria-label="Email us" class="pill">Email</a>
+              </div>
+            </div>
+
+            <div class="item">
+              <div>
+                <strong>Phone</strong><br>
+                <span class="help">(513) 668‑4382</span>
+              </div>
+              <div class="mini">
+                <a href="tel:15136684382" aria-label="Call us" class="pill">Call</a>
+                <a href="sms:15136684382" aria-label="Text us" class="pill">Text</a>
+              </div>
+            </div>
+
+            <div class="item">
+              <div>
+                <strong>Hours</strong><br>
+                <span class="help">Mon–Sat • 8:00a – 6:00p</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
   </section>
 
+  <!-- Pre‑footer: stamp + mini nav (matches index) -->
   <div class="container prefooter">
-    <div class="stampwrap"><img src="/assets/seal-white.PNG" alt="DuraHaus stamp (white)"></div>
+    <div class="stampwrap">
+      <img src="/assets/seal-white.PNG" alt="DuraHaus stamp (white)">
+    </div>
     <nav class="menu" aria-label="Footer quick links">
-      <a href="/services.html" class="pill">Services</a><a href="/projects.html" class="pill">Projects</a><a href="/about.html" class="pill">About</a>
-      <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus"><svg viewBox="0 0 24 24"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg></a>
+      <a href="/services.html" class="pill">Services</a>
+      <a href="/projects.html" class="pill">Projects</a>
+      <a href="/about.html" class="pill">About</a>
+      <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
+      </a>
       <a class="pill cta" href="/quote.html">Get a Quote</a>
     </nav>
   </div>
 
-  <footer><div class="container foot"><small>© <span id="y"></span> DuraHaus Painting & Construction. All rights reserved.</small></div></footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <!-- Footer -->
+  <footer>
+    <div class="container foot">
+      <small>© <span id="y"></span> DuraHaus Painting & Construction. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
