@@ -27,37 +27,23 @@
     a{color:inherit;text-decoration:none}
     img{display:block;width:100%;height:auto;background:#0d0d0d}
     .container{max-width:var(--max);margin:0 auto;padding:0 20px}
-
     /* Header (sticky) */
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(10,10,10,.92);
-      backdrop-filter:saturate(140%) blur(8px);
-      border-bottom:1px solid var(--line)
-    }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;gap:18px;
-      padding:12px 0   /* slimmer bar */
-    }
+    header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
     .brand{display:flex;align-items:center;gap:14px;min-width:0}
-    .brand picture{display:block;line-height:0}
-    .brand img{height:56px;width:auto;display:block}   /* BIG logo */
+    .brand img{height:32px}
     .brand .wordmark{font-weight:800;letter-spacing:.03em;white-space:nowrap}
-
-    /* compact nav controls so logo stands out */
-    .navlinks{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-    .pill{padding:.5rem .8rem;border:1px solid var(--line);border-radius:999px;font-size:14px}
-    .cta{background:#fff;color:#000;border-color:#fff;font-weight:700}
-    .iconbtn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line);border-radius:999px}
-    .iconbtn svg{width:18px;height:18px;fill:#fff}
-
-    @media (max-width:600px){
-      .nav{padding:10px 0}
-      .brand img{height:44px} /* large on mobile too */
-      .pill{font-size:13px;padding:.45rem .7rem}
-      .iconbtn{width:38px;height:38px}
+    .navlinks{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-left:25px; /* ✅ Shift nav items to the right */
     }
-
+    .pill{padding:.55rem .9rem;border:1px solid var(--line);border-radius:999px}
+    .cta{background:#fff;color:#000;border-color:#fff;font-weight:700}
+    .iconbtn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:999px}
+    .iconbtn svg{width:20px;height:20px;fill:#fff}
     /* Hero */
     .hero{display:grid;grid-template-columns:1fr;background:#0c0c0c;border-bottom:1px solid var(--line)}
     .hero__media{position:relative;aspect-ratio:16/9;max-height:70vh;overflow:hidden}
@@ -71,7 +57,6 @@
       .hero__copy{padding:4.2rem 0 4rem 2rem}
       .row{grid-template-columns:1.05fr .95fr;align-items:center}
     }
-
     /* Cards / grids */
     .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
     .card .pad{padding:1.1rem}
@@ -79,16 +64,13 @@
     p{margin:.25rem 0 0}
     .grid{display:grid;gap:var(--gap);grid-template-columns:1fr}
     @media (min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
-
     /* CTA band */
     .band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:1.2rem;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
-
     /* Footer */
     footer{border-top:1px solid var(--line);margin-top:4rem}
     .foot{display:grid;gap:18px;align-items:center;padding:1.2rem 0;grid-template-columns:1fr auto}
     small{color:var(--muted)}
     .stamp{height:44px;opacity:.9}
-
     /* Buttons */
     .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.1rem;border-radius:12px;border:1px solid var(--line)}
     .btn--light{background:#fff;color:#000;border-color:#fff;font-weight:700}
@@ -101,17 +83,16 @@
   <!-- Header -->
   <header>
     <div class="container nav">
-      <a class="brand" href="/" aria-label="DuraHaus home">
+      <a class="brand" href="/">
         <picture>
           <source srcset="/assets/durahaus-logo.svg" type="image/svg+xml">
           <source srcset="/assets/durahaus-logo.png" type="image/png">
-          <img src="/assets/durahaus-logo.jpg" alt="DuraHaus logo"
-               onerror="this.closest('.brand').querySelector('.wordmark').style.display='block'">
+          <img src="/assets/durahaus-logo.jpg" alt="DuraHaus logo" onerror="this.closest('.brand').querySelector('.wordmark').style.display='block'">
         </picture>
         <span class="wordmark" style="display:none">DURAHAUS</span>
       </a>
 
-      <nav class="navlinks" aria-label="Primary">
+      <nav class="navlinks">
         <a href="/services.html" class="pill">Services</a>
         <a href="/projects.html" class="pill">Projects</a>
         <a href="/about.html" class="pill">About</a>
@@ -126,10 +107,10 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero__media">
-      <img src="/assets/stock-hero.webp" alt="Cincinnati high‑end home exterior">
+      <img src="/assets/stock-hero.webp" alt="Cincinnati high-end home exterior">
     </div>
     <div class="hero__copy container">
-      <h1>Professional Painting. Clean, On‑Time.<br>Protecting What’s Built.</h1>
+      <h1>Professional Painting. Clean, On-Time.<br>Protecting What’s Built.</h1>
       <p class="lead">
         From interiors to exteriors, cabinets to concrete — we approach every job with care, craftsmanship, and materials built to perform. All to make your home more beautiful, more durable, and better protected against time and weather.
       </p>
@@ -148,7 +129,7 @@
     <div>
       <h2>Protecting What’s Built. <br>Enhancing What’s Seen.</h2>
       <p class="lead">
-        At DuraHaus that is our mission. We supply customers with specialized skills and knowledge in Interior/Exterior Painting, Cabinetry Finishes, Staining & Wood Finishes, Surface‑Protecting Coatings, Concrete Coatings, Drywall Repair, Interior/Exterior Sealing and more.
+        At DuraHaus that is our mission. We supply customers with specialized skills and knowledge in Interior/Exterior Painting, Cabinetry Finishes, Staining & Wood Finishes, Surface-Protecting Coatings, Concrete Coatings, Drywall Repair, Interior/Exterior Sealing and more.
       </p>
       <div class="stack" style="margin-top:1rem">
         <a class="btn btn--light" href="/services.html">Explore Services</a>
@@ -164,7 +145,7 @@
         <img src="/assets/stock-interior.webp" alt="Interior painting" style="height:340px;object-fit:cover;filter:grayscale(1);">
         <div class="pad">
           <h3 style="margin:0 0 .25rem">Interior Painting</h3>
-          <p>Walls, ceilings, trim, and cabinetry — dust‑controlled and precise.</p>
+          <p>Walls, ceilings, trim, and cabinetry — dust-controlled and precise.</p>
         </div>
       </a>
 
@@ -193,7 +174,7 @@
         <img src="/assets/stock-cabinets.webp" alt="Cabinet refinishing" style="height:340px;object-fit:cover;filter:grayscale(1);">
         <div class="pad">
           <h3 style="margin:0 0 .25rem">Cabinet Refinishing</h3>
-          <p>Factory‑smooth primers and hard‑wearing topcoats.</p>
+          <p>Factory-smooth primers and hard-wearing topcoats.</p>
         </div>
       </a>
 
@@ -209,7 +190,7 @@
         <img src="/assets/stock-drywall.webp" alt="Drywall repair" style="height:340px;object-fit:cover;filter:grayscale(1);">
         <div class="pad">
           <h3 style="margin:0 0 .25rem">Drywall & Repair</h3>
-          <p>Repairs and resurfacing for flat, paint‑ready surfaces.</p>
+          <p>Repairs and resurfacing for flat, paint-ready surfaces.</p>
         </div>
       </a>
     </div>
