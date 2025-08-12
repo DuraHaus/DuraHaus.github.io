@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Request a Quote — DuraHaus</title>
-  <meta name="description" content="Request a painting or coatings quote from DuraHaus. Clean, on-time, built to perform.">
+  <meta name="description" content="Request a professional painting quote from DuraHaus. Fast estimates, tidy jobsites, results that last.">
   <link rel="preload" as="image" href="/assets/stock-hero.webp">
   <style>
     :root{
@@ -20,7 +20,7 @@
     .brand img{background:transparent!important}
     .container{max-width:var(--max);margin:0 auto;padding:0 20px}
 
-    /* Header (match index) */
+    /* Header (matches index) */
     header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.92);
       backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
@@ -40,38 +40,24 @@
       .iconbtn{width:38px;height:38px}
     }
 
-    /* Page hero */
-    .page-hero{border-bottom:1px solid var(--line);background:#0c0c0c}
-    .page-hero .wrap{padding:3rem 0}
-    .page-hero h1{margin:0 0 .5rem;font-size:clamp(32px,5vw,44px);line-height:1.08;letter-spacing:-.01em}
-    .lead{color:var(--muted);font-size:clamp(16px,1.8vw,19px);margin:0}
+    /* Page header */
+    .pagehead{border-bottom:1px solid var(--line);background:#0c0c0c}
+    .pagehead .wrap{display:grid;gap:var(--gap);grid-template-columns:1fr}
+    .pagehead h1{margin:0;padding:2.2rem 0;font-size:clamp(30px,4.6vw,48px);line-height:1.08;letter-spacing:-.01em}
+    .pagehead p{color:var(--muted);margin:-8px 0 22px}
 
-    /* Layout */
+    /* Cards / layout */
     .grid{display:grid;gap:var(--gap);grid-template-columns:1fr}
-    @media (min-width:900px){.grid{grid-template-columns:1.05fr .95fr}}
-
-    /* Card / form */
+    @media (min-width:900px){.grid{grid-template-columns:1.15fr .85fr}}
     .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-    .pad{padding:1.2rem}
-    h2{margin:0 0 .6rem;font-size:clamp(22px,2.2vw,28px)}
-    form .row{display:grid;gap:12px;grid-template-columns:1fr}
-    @media (min-width:720px){form .row.two{grid-template-columns:1fr 1fr}}
-    label{font-size:.95rem;display:block;margin:.1rem 0 .25rem}
-    input,select,textarea{
-      width:100%;padding:.8rem .9rem;border-radius:12px;
-      border:1px solid var(--line);background:#0d0d0d;color:var(--ink);
-    }
-    textarea{min-height:140px;resize:vertical}
-    .hint{color:var(--muted);font-size:.9rem;margin-top:.25rem}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.15rem;border-radius:12px;border:1px solid var(--line)}
-    .btn--light{background:#fff;color:#000;border-color:#fff;font-weight:700}
-    .btn--ghost{background:transparent}
-    .stack{display:flex;gap:.7rem;flex-wrap:wrap}
+    .pad{padding:1.15rem}
+    .lead{color:var(--muted)}
 
-    /* Contact card */
-    .contact-list{list-style:none;margin:0;padding:0}
-    .contact-item{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);border-radius:12px;padding:.85rem 1rem;margin-top:.6rem;background:#0d0d0d}
-    .contact-item small{color:var(--muted)}
+    /* Contact tiles */
+    .list{display:grid;gap:12px;margin-top:.6rem}
+    .item{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:12px;padding:.9rem 1rem}
+    .mini{display:flex;gap:8px;flex-wrap:wrap}
+    .mini a{padding:.45rem .7rem;border:1px solid var(--line);border-radius:999px;font-size:13px}
 
     /* Pre‑footer (stamp + mini nav) */
     .prefooter{margin:3rem auto 1.5rem;display:flex;gap:22px;align-items:center;justify-content:space-between;flex-wrap:wrap}
@@ -111,141 +97,82 @@
         <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
         </a>
-        <a class="pill cta" href="/quote.html" aria-current="page">Get a Quote</a>
+        <a class="pill cta" href="/quote.html">Get a Quote</a>
       </nav>
     </div>
   </header>
 
-  <!-- Page hero -->
-  <section class="page-hero">
+  <!-- Page head -->
+  <section class="pagehead">
     <div class="container wrap">
       <h1>Request a Quote</h1>
-      <p class="lead">Fast estimates with clear scope and scheduling. Add a few details below or email us directly.</p>
+      <p>Tell us a little about your project. We’ll follow up quickly with next steps.</p>
     </div>
   </section>
 
-  <!-- Main content -->
-  <main class="container" style="margin:2rem auto 0">
+  <!-- Contact-first layout (no form) -->
+  <section class="container" style="margin:2rem 0 3rem">
     <div class="grid">
-
-      <!-- Form card (mailto-based) -->
+      <!-- Left: Quick contact actions -->
       <div class="card">
         <div class="pad">
-          <h2>Tell us about your project</h2>
-          <form id="quoteForm">
-            <div class="row two">
+          <h2 style="margin:.1rem 0 .4rem">How would you like to reach us?</h2>
+          <p class="lead">Fastest reply during business hours (Mon–Sat • 8:00a–6:00p).</p>
+
+          <div class="list">
+            <div class="item">
               <div>
-                <label for="name">Name*</label>
-                <input id="name" name="name" required autocomplete="name" placeholder="Jane Doe">
+                <strong>Call</strong><br>
+                <span class="lead">(513) 668‑4382</span>
               </div>
-              <div>
-                <label for="email">Email*</label>
-                <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+              <div class="mini">
+                <a href="tel:15136684382" class="pill">Call</a>
               </div>
             </div>
 
-            <div class="row two" style="margin-top:12px">
+            <div class="item">
               <div>
-                <label for="phone">Phone*</label>
-                <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="(513) 668‑4382">
+                <strong>Text</strong><br>
+                <span class="lead">(513) 668‑4382</span>
               </div>
-              <div>
-                <label for="city">City</label>
-                <input id="city" name="city" placeholder="Cincinnati, OH">
+              <div class="mini">
+                <a href="sms:15136684382" class="pill">Text</a>
               </div>
             </div>
 
-            <div class="row two" style="margin-top:12px">
+            <div class="item">
               <div>
-                <label for="service">Service</label>
-                <select id="service" name="service">
-                  <option value="">Select a service…</option>
-                  <option>Interior Painting</option>
-                  <option>Exterior Painting</option>
-                  <option>Cabinet Refinishing</option>
-                  <option>Concrete Coatings</option>
-                  <option>Staining & Wood Care</option>
-                  <option>Drywall & Repair</option>
-                  <option>Waterproofing / Sealing</option>
-                  <option>Metal Coatings</option>
-                  <option>Other</option>
-                </select>
+                <strong>Email</strong><br>
+                <span class="lead">durahaus.solutions@gmail.com</span>
               </div>
-              <div>
-                <label for="timeline">Timeline</label>
-                <select id="timeline" name="timeline">
-                  <option value="">When are you hoping to start?</option>
-                  <option>ASAP</option>
-                  <option>1–2 weeks</option>
-                  <option>3–6 weeks</option>
-                  <option>Flexible</option>
-                </select>
+              <div class="mini">
+                <!-- Pre-fills subject + a stub body in the user’s mail app -->
+                <a class="pill" href="mailto:durahaus.solutions@gmail.com?subject=Quote%20Request%20—%20DuraHaus&body=Hi%20DuraHaus%2C%0A%0AProject%20type%3A%20Interior%20%2F%20Exterior%20%2F%20Cabinets%20%2F%20Concrete%20%2F%20Other%0AAddress%20(city%2Farea)%3A%0AIdeal%20timing%3A%0ADetails%3A%0A%0AThanks!">Email</a>
               </div>
             </div>
+          </div>
 
-            <div class="row" style="margin-top:12px">
-              <div>
-                <label for="details">Project details</label>
-                <textarea id="details" name="details" placeholder="Rooms/areas, condition, colors, special requests…"></textarea>
-                <div class="hint">Tip: for the fastest quotes, include your address and photos when you email us.</div>
-              </div>
-            </div>
-
-            <div class="stack" style="margin-top:16px">
-              <button type="submit" class="btn btn--light">Send Request</button>
-              <a class="btn btn--ghost" href="mailto:durahaus.solutions@gmail.com?subject=Quote%20request%20—%20DuraHaus">Email Us Instead</a>
-            </div>
-
-            <!-- Fallback block shows if mailto can't open -->
-            <div id="fallback" style="display:none;margin-top:14px">
-              <div class="hint">Having trouble opening your email app? Copy the message below and email it to <strong>durahaus.solutions@gmail.com</strong>.</div>
-              <textarea id="fallbackText" readonly style="margin-top:10px"></textarea>
-              <div class="stack" style="margin-top:10px">
-                <button type="button" class="btn" id="copyBtn">Copy</button>
-                <a class="btn btn--light" href="mailto:durahaus.solutions@gmail.com">Open Email</a>
-              </div>
-            </div>
-          </form>
+          <p class="lead" style="margin-top:1rem">Prefer a call‑back? Text us your name, city, and service — we’ll reach out.</p>
         </div>
       </div>
 
-      <!-- Direct contact + hours/card -->
+      <!-- Right: What to include -->
       <aside class="card">
         <div class="pad">
-          <h2>Contact</h2>
-          <ul class="contact-list">
-            <li class="contact-item">
-              <div>
-                <div>Email</div>
-                <small>durahaus.solutions@gmail.com</small>
-              </div>
-              <a class="pill" href="mailto:durahaus.solutions@gmail.com">Email</a>
-            </li>
-            <li class="contact-item">
-              <div>
-                <div>Phone</div>
-                <small>(513) 668‑4382</small>
-              </div>
-              <a class="pill" href="tel:15136684382">Call</a>
-            </li>
+          <h2 style="margin:.1rem 0 .4rem">Helpful details to share</h2>
+          <ul style="margin:.4rem 0 0; padding-left:1.1rem; color:var(--muted); line-height:1.6">
+            <li>Service type (interior, exterior, cabinets, concrete, stain, drywall)</li>
+            <li>Approximate square footage or number of rooms/surfaces</li>
+            <li>Color ideas or finishes (if known)</li>
+            <li>Location (city/neighborhood) & ideal timing</li>
+            <li>Photos (optional) for quicker, more accurate estimates</li>
           </ul>
-
-          <div style="margin-top:1.2rem">
-            <h3 style="margin:.1rem 0 .4rem;font-size:1.1rem">Service Area</h3>
-            <p class="lead" style="margin:0">Greater Cincinnati & nearby suburbs.</p>
-          </div>
-
-          <div style="margin-top:1.2rem">
-            <h3 style="margin:.1rem 0 .4rem;font-size:1.1rem">Hours</h3>
-            <p class="lead" style="margin:0">Mon–Sat, 8am–6pm</p>
-          </div>
         </div>
       </aside>
-
     </div>
-  </main>
+  </section>
 
-  <!-- Pre‑footer: stamp + mini nav (match index) -->
+  <!-- Pre‑footer: stamp + mini nav (matches index) -->
   <div class="container prefooter">
     <div class="stampwrap">
       <img src="/assets/seal-white.PNG" alt="DuraHaus stamp (white)">
@@ -257,7 +184,7 @@
       <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
       </a>
-      <a class="pill cta" href="/quote.html" aria-current="page">Get a Quote</a>
+      <a class="pill cta" href="/quote.html">Get a Quote</a>
     </nav>
   </div>
 
@@ -268,63 +195,6 @@
     </div>
   </footer>
 
-  <script>
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Mailto form
-    const f = document.getElementById('quoteForm');
-    const fallback = document.getElementById('fallback');
-    const fbText = document.getElementById('fallbackText');
-    const copyBtn = document.getElementById('copyBtn');
-
-    f.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = encodeURIComponent(f.name.value.trim());
-      const email = encodeURIComponent(f.email.value.trim());
-      const phone = encodeURIComponent(f.phone.value.trim());
-      const city = encodeURIComponent(f.city.value.trim());
-      const service = encodeURIComponent(f.service.value);
-      const timeline = encodeURIComponent(f.timeline.value);
-      const details = encodeURIComponent(f.details.value.trim());
-
-      const subject = `Quote request — ${decodeURIComponent(name) || 'DuraHaus'}`;
-      const body =
-`Name: ${decodeURIComponent(name)}
-Email: ${decodeURIComponent(email)}
-Phone: ${decodeURIComponent(phone)}
-City: ${decodeURIComponent(city)}
-Service: ${decodeURIComponent(service)}
-Timeline: ${decodeURIComponent(timeline)}
-
-Details:
-${decodeURIComponent(details)}
-
-— Sent from durahaus.github.io/quote.html`;
-
-      const mailto = `mailto:durahaus.solutions@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-      // Try to open default email client
-      const opened = window.open(mailto, '_self');
-
-      // If popup/email blocked, show fallback copy area
-      setTimeout(() => {
-        if (document.hasFocus()) {
-          fbText.value = body;
-          fallback.style.display = 'block';
-        }
-      }, 400);
-    });
-
-    copyBtn.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(fbText.value);
-        copyBtn.textContent = 'Copied!';
-        setTimeout(()=>copyBtn.textContent='Copy', 1200);
-      } catch (e) {
-        copyBtn.textContent = 'Select & Copy';
-      }
-    });
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
