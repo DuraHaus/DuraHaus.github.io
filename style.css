@@ -192,3 +192,39 @@ nav a:focus-visible{outline:2px solid var(--brand); outline-offset:4px; border-r
 
 /* Optional: tiny header spacing bump so larger logo doesn't feel cramped */
 .site-header .inner{ padding: 18px 0; }
+/* --- Premium layout upgrades --- */
+
+/* Bigger brandmark for presence */
+.brandmark{ width:240px; height:auto; display:block }
+@media (min-width:900px){ .brandmark{ width:280px } }
+
+/* Elevated hero with full-bleed image */
+.hero.hero--elevated{ position:relative; min-height:68vh; display:grid; align-items:end; padding:0 }
+.hero__media{ position:absolute; inset:0; overflow:hidden }
+.hero__media img{ width:100%; height:100%; object-fit:cover; filter:saturate(1.05) contrast(1.04) brightness(.92) }
+.hero__content{ position:relative; z-index:1; padding:12vh 0 10vh }
+.hero__content h1{ margin:0 0 12px }
+.hero__content p{ max-width:740px }
+
+/* Feature bands (image + text) */
+.feature{ display:grid; grid-template-columns:1.15fr .85fr; gap:22px; align-items:center; padding:48px 0 }
+.feature__media img{ width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:12px }
+.feature__text h2{ margin:0 0 8px }
+.feature--reverse{ grid-auto-flow:dense }
+.feature--reverse .feature__media{ order:2 }
+.feature--reverse .feature__text{ order:1 }
+@media (max-width:980px){
+  .feature{ grid-template-columns:1fr; }
+  .feature--reverse .feature__media,.feature--reverse .feature__text{ order:unset }
+}
+
+/* Services grid tweaks */
+.cards--tight .card{ padding:14px }
+.cards .media{ width:100%; aspect-ratio: 4/3; overflow:hidden; border-radius:10px; margin: 0 0 10px }
+.cards .media img{ width:100%; height:100%; object-fit:cover; display:block }
+
+/* Testimonials tighter rhythm */
+.testimonials--tight .quote{ padding:16px }
+
+/* Minor polish */
+.more{ color:var(--brand); font-weight:600 }
