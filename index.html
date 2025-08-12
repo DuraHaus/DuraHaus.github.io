@@ -8,59 +8,35 @@
   <link rel="preload" as="image" href="/assets/stock-hero.webp">
   <style>
     :root{
-      --bg:#0a0a0a;
-      --panel:#101010;
-      --ink:#ffffff;
-      --muted:#bdbdbd;
-      --line:#1a1a1a;
-      --max:1120px;
-      --r:14px;
-      --gap:28px;
+      --bg:#0a0a0a; --panel:#101010; --ink:#ffffff; --muted:#bdbdbd;
+      --line:#1a1a1a; --max:1120px; --r:14px; --gap:28px;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;background:var(--bg);color:var(--ink);
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--ink);
       font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-    }
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
     a{color:inherit;text-decoration:none}
     img{display:block;width:100%;height:auto;background:#0d0d0d}
-    .brand img{background:transparent!important} /* prevent logo box */
+    .brand img{background:transparent!important}
     .container{max-width:var(--max);margin:0 auto;padding:0 20px}
 
-    /* Header (sticky) */
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(10,10,10,.92);
-      backdrop-filter:saturate(140%) blur(8px);
-      border-bottom:1px solid var(--line)
-    }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;gap:18px;
-      padding:12px 0   /* slimmer bar */
-    }
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.92);
+      backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
     .brand{display:flex;align-items:center;gap:14px;min-width:0}
     .brand picture{display:block;line-height:0}
-    .brand img{height:56px;width:auto;display:block}   /* BIG logo */
+    .brand img{height:56px;width:auto;display:block}
     .brand .wordmark{font-weight:800;letter-spacing:.03em;white-space:nowrap}
 
-    /* compact nav controls so logo stands out */
-    .navlinks{
-      display:flex;
-      gap:12px;
-      align-items:center;
-      flex-wrap:wrap;
-      margin-left:20px; /* nudge menu to the right */
-    }
+    .navlinks{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-left:20px}
     .pill{padding:.5rem .8rem;border:1px solid var(--line);border-radius:999px;font-size:14px}
     .cta{background:#fff;color:#000;border-color:#fff;font-weight:700}
     .iconbtn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line);border-radius:999px}
     .iconbtn svg{width:18px;height:18px;fill:#fff}
-
     @media (max-width:600px){
       .nav{padding:10px 0}
-      .brand img{height:44px} /* large on mobile too */
+      .brand img{height:44px}
       .pill{font-size:13px;padding:.45rem .7rem}
       .iconbtn{width:38px;height:38px}
     }
@@ -87,14 +63,14 @@
     .grid{display:grid;gap:var(--gap);grid-template-columns:1fr}
     @media (min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
 
-    /* Why Choose Us */
+    /* Why */
     .why{margin:3rem auto 0}
     .why .cols{display:grid;gap:var(--gap)}
     @media (min-width:900px){.why .cols{grid-template-columns:repeat(3,1fr)}}
     .why .tile{border:1px solid var(--line);border-radius:var(--r);padding:1.2rem;background:var(--panel)}
     .why h3{margin:.1rem 0 .4rem;font-size:1.1rem}
 
-    /* FAQ (details/summary, no JS) */
+    /* FAQ */
     .faq{margin:3rem auto}
     .faq details{border:1px solid var(--line);border-radius:12px;padding:.9rem 1.1rem;background:var(--panel)}
     .faq details+details{margin-top:12px}
@@ -102,21 +78,23 @@
     .faq summary::-webkit-details-marker{display:none}
     .faq .a{color:var(--muted);margin:.6rem 0 0}
 
-    /* Stamp band above footer */
-    .stampband{margin:3rem auto 1.5rem;display:flex;justify-content:center}
-    .stampband img{
-      width:128px;height:auto;opacity:.85;filter:invert(1) brightness(1.6); /* turns dark stamp white if needed */
-      background:transparent;
-    }
-
     /* CTA band */
     .band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:1.2rem;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
 
+    /* Pre‑footer (stamp + mini nav) */
+    .prefooter{margin:3rem auto 1.5rem;display:flex;gap:22px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .prefooter .stampwrap{display:flex;align-items:center;gap:14px}
+    .prefooter img{width:128px;height:auto;opacity:.95;filter:invert(1) brightness(1.6);background:transparent}
+    .prefooter .menu{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    @media (max-width:720px){
+      .prefooter{justify-content:center;text-align:center}
+      .prefooter .menu{justify-content:center}
+    }
+
     /* Footer */
     footer{border-top:1px solid var(--line);margin-top:2rem}
-    .foot{display:grid;gap:18px;align-items:center;padding:1.2rem 0;grid-template-columns:1fr auto}
+    .foot{display:grid;gap:18px;align-items:center;padding:1.2rem 0;grid-template-columns:1fr}
     small{color:var(--muted)}
-    .stamp{height:44px;opacity:.9}
 
     /* Buttons */
     .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.1rem;border-radius:12px;border:1px solid var(--line)}
@@ -266,24 +244,16 @@
   <!-- FAQ -->
   <section class="container faq">
     <h2 style="margin-bottom:.6rem">FAQs</h2>
-
-    <details>
-      <summary>Do you offer free estimates?</summary>
+    <details><summary>Do you offer free estimates?</summary>
       <div class="a">Yes. We can visit on‑site within 48 hours in most cases and provide a written, itemized quote.</div>
     </details>
-
-    <details>
-      <summary>How soon can you start?</summary>
+    <details><summary>How soon can you start?</summary>
       <div class="a">Scheduling depends on scope and season. Smaller interior projects can often begin within 1–2 weeks.</div>
     </details>
-
-    <details>
-      <summary>What materials do you use?</summary>
+    <details><summary>What materials do you use?</summary>
       <div class="a">We spec pro‑grade primers, enamels, and exterior coatings matched to each substrate for durability and finish quality.</div>
     </details>
-
-    <details>
-      <summary>Are you insured and do you provide a warranty?</summary>
+    <details><summary>Are you insured and do you provide a warranty?</summary>
       <div class="a">Yes—fully insured. We include a workmanship warranty with every project. Details are listed on your written quote.</div>
     </details>
   </section>
@@ -304,21 +274,30 @@
     </div>
   </section>
 
-  <!-- White stamp band -->
-  <div class="container stampband">
-    <!-- If you have a true white asset, use /assets/stamp-white.svg.
-         If not, this filter will make a dark stamp appear white. -->
-    <img src="/assets/seal-white.PNG" alt="DuraHaus stamp (white)">
+  <!-- Pre‑footer: stamp + mini nav -->
+  <div class="container prefooter">
+    <div class="stampwrap">
+      <!-- If you have a true white asset, keep it; otherwise the filter makes a dark stamp appear white -->
+      <img src="/assets/seal-white.PNG" alt="DuraHaus stamp (white)">
+    </div>
+    <nav class="menu" aria-label="Footer quick links">
+      <a href="/services.html" class="pill">Services</a>
+      <a href="/projects.html" class="pill">Projects</a>
+      <a href="/about.html" class="pill">About</a>
+      <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
+      </a>
+      <a class="pill cta" href="/quote.html">Get a Quote</a>
+    </nav>
   </div>
 
   <!-- Footer -->
   <footer>
     <div class="container foot">
       <small>© <span id="y"></span> DuraHaus Painting & Construction. All rights reserved.</small>
-      <img class="stamp" src="/assets/seal-white.svg" alt="DuraHaus stamp" onerror="this.style.display='none'">
     </div>
   </footer>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
