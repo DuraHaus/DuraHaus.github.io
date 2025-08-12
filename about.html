@@ -2,91 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DuraHaus Painting & Construction | Premium Painting & Protective Coatings</title>
-  <meta name="description" content="Premium painting and protective coatings—serving Butler, Hamilton, and Warren counties. Interior & exterior painting, cabinets, concrete coatings, weatherproofing, and more.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="icon" href="/assets/favicon.ico">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "DuraHaus Painting & Construction", "telephone": "+1-513-668-4382", "email": "durahaus.solutions@gmail.com", "image": "https://durahaus.github.io/assets/og-cover.jpg", "url": "https://durahaus.github.io", "areaServed": ["Butler County OH", "Hamilton County OH", "Warren County OH"], "priceRange": "$$", "description": "Premium painting and protective coatings for homes and businesses in Butler, Hamilton, and Warren counties.", "address": {"@type": "PostalAddress", "addressRegion": "OH", "addressCountry": "US"}}</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About — DuraHaus</title>
+  <meta name="description" content="About DuraHaus Painting & Construction in Cincinnati. Professional interior and exterior painting, coatings, and finishes.">
+  <link rel="preload" as="image" href="/assets/stock-hero.webp">
+  <style>
+    :root{--bg:#0a0a0a;--panel:#101010;--ink:#fff;--muted:#bdbdbd;--line:#1a1a1a;--max:1120px;--r:14px;--gap:28px}
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a{color:inherit;text-decoration:none} img{display:block;width:100%;height:auto;background:#0d0d0d}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:14px;min-width:0}
+    .brand picture{display:block;line-height:0}
+    .brand img{height:56px;width:auto;display:block;background:transparent!important}
+    .navlinks{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-left:20px}
+    .pill{padding:.5rem .8rem;border:1px solid var(--line);border-radius:999px;font-size:14px}
+    .cta{background:#fff;color:#000;border-color:#fff;font-weight:700}
+    .iconbtn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line);border-radius:999px}
+    .iconbtn svg{width:18px;height:18px;fill:#fff}
+    @media (max-width:600px){.brand img{height:44px}.pill{font-size:13px;padding:.45rem .7rem}.iconbtn{width:38px;height:38px}}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr;background:#0c0c0c;border-bottom:1px solid var(--line)}
+    .hero__media{position:relative;aspect-ratio:16/9;max-height:60vh;overflow:hidden}
+    .hero__media img{width:100%;height:100%;object-fit:cover;opacity:.95;filter:grayscale(1) contrast(1.05)}
+    .hero__copy{padding:3rem 0}
+    h1{margin:0 0 .6rem;font-size:clamp(32px,5vw,48px);line-height:1.05;letter-spacing:-.01em}
+    .lead{color:var(--muted);font-size:clamp(16px,1.8vw,19px)}
+    /* Panels / grids */
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+    .card .pad{padding:1.2rem}
+    .two{display:grid;gap:var(--gap);grid-template-columns:1fr}
+    @media (min-width:860px){.two{grid-template-columns:1.1fr .9fr}}
+    /* Ready band */
+    .band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:1.2rem;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.1rem;border-radius:12px;border:1px solid var(--line)}
+    .btn--light{background:#fff;color:#000;border-color:#fff;font-weight:700}.stack{display:flex;gap:.7rem;flex-wrap:wrap}
+    /* Stamp band + footer-nav cluster */
+    .stampband{margin:3rem auto 1.2rem;display:flex;justify-content:center}
+    .stampband img{width:128px;opacity:.85;filter:invert(1) brightness(1.6);background:transparent}
+    .footnav{display:flex;justify-content:center;gap:14px;margin:0 0 1.4rem}
+    .chip{padding:.6rem 1rem;border:1px solid var(--line);border-radius:999px}
+    footer{border-top:1px solid var(--line)}
+    .foot{display:grid;gap:18px;align-items:center;padding:1.2rem 20px;max-width:var(--max);margin:0 auto;grid-template-columns:1fr}
+  </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="inner container">
-    <a class="logo" href="/"><img src="/assets/durahaus-logo.svg" alt="DuraHaus logo" class="brandmark"></a>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/services.html">Services</a>
-      <a href="/projects.html">Projects</a>
-      <a href="/about.html">About</a>
-      <a class="btn btn--small btn--primary" href="/contact.html">Get a Quote</a>
+<header>
+  <div class="container nav">
+    <a class="brand" href="/" aria-label="DuraHaus home">
+      <picture>
+        <source srcset="/assets/durahaus-logo.svg" type="image/svg+xml">
+        <img src="/assets/durahaus-logo.png" alt="DuraHaus logo">
+      </picture>
+    </a>
+    <nav class="navlinks" aria-label="Primary">
+      <a href="/services.html" class="pill">Services</a>
+      <a href="/projects.html" class="pill">Projects</a>
+      <a href="/about.html" class="pill">About</a>
+      <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
+      </a>
+      <a class="pill cta" href="/quote.html">Get a Quote</a>
     </nav>
-    <a class="btn btn--small btn--ghost" href="tel:+15136684382">Call 513-668-4382</a>
   </div>
 </header>
 
-<section class="section container">
-  <h1>About</h1>
-  <p class="lead">DuraHaus Painting & Construction delivers premium painting and protective coatings with a focus on durability, clean job sites, and transparent pricing.</p>
-  <h2>Our Promise</h2>
-  <ul>
-    <li>We prep thoroughly—because lasting results start there.</li>
-    <li>We communicate clearly—scope, schedule, and pricing are itemized.</li>
-    <li>We protect your home—masking, covering, and daily clean-up.</li>
-  </ul>
-  <h2>Coverage</h2>
-  <p>We serve Butler, Hamilton, and Warren counties. For nearby cities, just ask—we’re flexible.</p>
-  <h2>Contact</h2>
-  <p><a href="tel:+15136684382">513-668-4382</a> • <a href="mailto:durahaus.solutions@gmail.com">durahaus.solutions@gmail.com</a></p>
+<section class="hero">
+  <div class="hero__media"><img src="/assets/stock-hero.webp" alt=""></div>
+  <div class="hero__copy container">
+    <h1>About DuraHaus</h1>
+    <p class="lead">Protecting what’s built. Enhancing what’s seen. We bring clean execution, reliable scheduling, and coatings that perform in Ohio’s climate.</p>
+  </div>
 </section>
 
-<footer class="site-footer">
-  <div class="container cols">
-    <div>
-      <div class="logo" style="margin-bottom:6px"><span>Dura</span>Haus</div>
-      <small>Protecting what’s built. Enhancing what’s seen.</small><br>
-      <small>Serving Butler, Hamilton, and Warren counties</small>
-    </div>
-    <div>
-      <small><strong>Contact</strong></small><br>
-      <small><a href="tel:+15136684382">513-668-4382</a></small><br>
-      <small><a href="mailto:durahaus.solutions@gmail.com">durahaus.solutions@gmail.com</a></small><br>
-      <small><a href="/contact.html">Request a quote</a></small>
-    </div>
-    <div>
-      <small><strong>Company</strong></small><br>
-      <small><a href="/services.html">Services</a></small><br>
-      <small><a href="/projects.html">Projects</a></small><br>
-      <small><a href="/about.html">About</a></small>
-    </div>
-  </div>
-  <div class="container" style="padding:0 0 24px">
-    <small>© 2025 DuraHaus Painting & Construction. All rights reserved.</small>
-  </div>
+<section class="container two" style="margin:2.4rem auto 0">
+  <div class="card"><img src="/assets/stock-exterior.webp" alt="Exterior"></div>
+  <div class="card"><div class="pad">
+    <h2>Our Approach</h2>
+    <p class="lead">From interiors to exteriors, cabinets to concrete—we spec systems that bond and level right, then we prep like pros so it lasts.</p>
+    <ul>
+      <li>Dust‑controlled interiors & tidy jobsites</li>
+      <li>Factory‑smooth cabinet finishes</li>
+      <li>Weather‑ready exteriors</li>
+      <li>Clear communication & on‑time delivery</li>
+    </ul>
+  </div></div>
+</section>
 
-<!-- White stamp band -->
-<div class="container stampband">
-  <img src="/assets/seal-white.PNG" alt="DuraHaus stamp (white)">
+<section class="container" style="margin:2rem auto">
+  <div class="band">
+    <div>
+      <h2 style="margin:.2rem 0">Ready to start?</h2>
+      <p style="margin:.2rem 0;color:var(--muted)">Fast estimates, tidy jobsites, and results that hold up.</p>
+    </div>
+    <div class="stack">
+      <a class="btn btn--light" href="/quote.html">Request a Quote</a>
+      <a class="btn" href="tel:15136684382" aria-label="Call">Call Us</a>
+    </div>
+  </div>
+</section>
+
+<div class="container stampband"><img src="/assets/seal-white.PNG" alt="DuraHaus stamp"></div>
+<div class="footnav">
+  <a class="chip" href="/services.html">Services</a>
+  <a class="chip" href="/projects.html">Projects</a>
+  <a class="chip" href="/about.html">About</a>
+  <a class="chip" href="tel:15136684382" aria-label="Call">☎︎</a>
 </div>
 
-<!-- Bottom quick navigation -->
-<nav class="container bottom-nav" aria-label="Quick navigation">
-  <div class="pills">
-    <a href="/services.html" class="pill">Services</a>
-    <a href="/projects.html" class="pill">Projects</a>
-    <a href="/about.html" class="pill">About</a>
-    <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/>
-      </svg>
-    </a>
+<footer>
+  <div class="foot">
+    <small>© <span id="y"></span> DuraHaus Painting & Construction. All rights reserved.</small>
   </div>
-  <a class="btn btn--light bottom-cta" href="/quote.html">Get a Quote</a>
-</nav>
-
 </footer>
-<script src="/main.js"></script>
-<a class="fab-quote" href="/contact.html" aria-label="Get a Quote">Get a Quote</a>
-</body></html>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
