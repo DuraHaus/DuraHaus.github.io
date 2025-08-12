@@ -4,179 +4,135 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DuraHaus Painting & Construction</title>
-  <meta name="description" content="Premium painting and protective coatings for Cincinnati-area homes and businesses.">
+  <meta name="description" content="Premium interior & exterior painting, cabinet refinishing, concrete coatings, and weatherproofing for the Cincinnati metro.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" href="/assets/favicon.ico">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"DuraHaus Painting & Construction","telephone":"+1-513-668-4382","email":"durahaus.solutions@gmail.com","url":"https://durahaus.github.io","areaServed":["Butler County OH","Hamilton County OH","Warren County OH"],"priceRange":"$$","description":"Premium painting and protective coatings in the Cincinnati metro."}</script>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"DuraHaus Painting & Construction",
+    "telephone":"+1-513-668-4382",
+    "email":"durahaus.solutions@gmail.com",
+    "url":"https://durahaus.github.io",
+    "areaServed":["Butler County OH","Hamilton County OH","Warren County OH"],
+    "priceRange":"$$",
+    "description":"Premium painting and protective coatings in the Cincinnati metro."
+  }</script>
 </head>
 <body>
 <header class="site-header">
-  <div class="inner container">
+  <div class="container header__inner">
     <a class="logo" href="/"><img src="/assets/durahaus-logo.svg" alt="DuraHaus" class="brandmark"></a>
-    <nav>
+    <nav class="nav">
       <a href="/">Home</a>
       <a href="/services.html">Services</a>
       <a href="/projects.html">Projects</a>
       <a href="/about.html">About</a>
-      <a class="btn btn--small btn--primary" href="/contact.html">Get a Quote</a>
+      <a class="btn btn--primary btn--small" href="/contact.html">Get a Quote</a>
     </nav>
-    <a class="btn btn--small btn--ghost" href="tel:+15136684382">Call 513-668-4382</a>
+    <a class="btn btn--ghost btn--small callbtn" href="tel:+15136684382">513‑668‑4382</a>
   </div>
 </header>
 
-<!-- HERO — minimal headline, strong CTA -->
-<section class="hero hero--clean">
+<!-- HERO -->
+<section class="hero">
   <picture>
-    <source type="image/webp" srcset="/assets/stock-hero.webp 1600w, /assets/stock-hero.webp 1200w, /assets/stock-hero.webp 800w" sizes="(min-width:1000px) 100vw, 100vw">
-    <img class="hero__bg" src="/assets/stock-hero.webp" alt="Cincinnati-area home exterior" loading="eager" decoding="async">
+    <source type="image/webp" srcset="/assets/stock-hero.webp" />
+    <img class="hero__bg" src="/assets/stock-hero.webp" alt="Cincinnati high‑end home exterior" loading="eager" decoding="async">
   </picture>
   <div class="container hero__content">
     <h1>Painted Right. Built to Last.</h1>
-    <p class="sub">Interior & exterior painting, cabinets, concrete, and protective coatings.</p>
+    <p class="sub">Interior & exterior painting, cabinets, concrete coatings, and weatherproofing—delivered with clean prep and crisp lines.</p>
     <div class="cta">
-      <a class="btn btn--primary" href="/contact.html">Get a Free Quote</a>
-      <a class="btn btn--ghost" href="tel:+15136684382">Call 513-668-4382</a>
+      <a class="btn btn--primary" href="/contact.html">Request a Quote</a>
+      <a class="btn btn--ghost" href="tel:+15136684382">Call 513‑668‑4382</a>
     </div>
-    <ul class="badges">
-      <li>Insured</li><li>Clean Jobsite</li><li>Warranty</li>
+    <ul class="pill-badges">
+      <li>Insured</li><li>Prep‑First</li><li>Clean Jobsite</li><li>Warranty</li>
     </ul>
   </div>
 </section>
 
-<!-- THREE TRUST PILLARS — short + credible -->
-<section class="pillars-min container section">
-  <div class="pillar-min">
-    <h3>Durable Systems</h3>
-    <p>Top-tier primers & coatings matched to your surfaces and seasons.</p>
-  </div>
-  <div class="pillar-min">
-    <h3>Prep First</h3>
-    <p>Mask, sand, patch, prime. Clean lines and consistent finishes.</p>
-  </div>
-  <div class="pillar-min">
-    <h3>Clear Pricing</h3>
-    <p>Itemized quotes, defined scope, dependable schedules.</p>
+<!-- VALUE STRIP -->
+<section class="strip">
+  <div class="container strip__inner">
+    <div><h3>Durable Systems</h3><p>Coatings spec’d for the surface and the season.</p></div>
+    <div><h3>Factory‑Level Prep</h3><p>Mask. Sand. Patch. Prime. Then paint.</p></div>
+    <div><h3>Clear Pricing</h3><p>Itemized scope, materials, timelines—no surprises.</p></div>
   </div>
 </section>
 
-<!-- SERVICES GRID — image + title, minimal copy -->
+<!-- SERVICES (minimal, image‑first) -->
 <section id="services" class="section container">
   <h2>Services</h2>
-  <div class="grid cards cards--minimal">
-    <article class="card">
-      <div class="media">
-        <picture>
-          <source type="image/webp" srcset="/assets/stock-interior.webp 800w, /assets/stock-interior.webp 1200w" sizes="(min-width:900px) 33vw, 100vw">
-          <img src="/assets/stock-interior.webp" alt="Interior painting">
-        </picture>
-      </div>
+  <div class="grid services">
+    <article class="svc">
+      <img src="/assets/stock-interior.webp" alt="Interior painting">
       <h3>Interior Painting</h3>
     </article>
-
-    <article class="card">
-      <div class="media">
-        <picture>
-          <source type="image/webp" srcset="/assets/stock-exterior.webp 800w, /assets/stock-exterior.webp 1200w" sizes="(min-width:900px) 33vw, 100vw">
-          <img src="/assets/stock-exterior.webp" alt="Exterior painting">
-        </picture>
-      </div>
+    <article class="svc">
+      <img src="/assets/stock-exterior.webp" alt="Exterior painting">
       <h3>Exterior Painting</h3>
     </article>
-
-    <article class="card">
-      <div class="media">
-        <picture>
-          <source type="image/webp" srcset="/assets/stock-stain.webp 800w, /assets/stock-stain.webp 1200w" sizes="(min-width:900px) 33vw, 100vw">
-          <img src="/assets/stock-stain.webp" alt="Staining & wood finishes">
-        </picture>
-      </div>
-      <h3>Staining & Wood Finishes</h3>
-    </article>
-
-    <article class="card">
-      <div class="media">
-        <picture>
-          <source type="image/webp" srcset="/assets/stock-cabinets.webp 800w, /assets/stock-cabinets.webp 1200w" sizes="(min-width:900px) 33vw, 100vw">
-          <img src="/assets/stock-cabinets.webp" alt="Cabinet refinishing">
-        </picture>
-      </div>
+    <article class="svc">
+      <img src="/assets/stock-cabinets.webp" alt="Cabinet refinishing">
       <h3>Cabinet Refinishing</h3>
     </article>
-
-    <article class="card">
-      <div class="media">
-        <picture>
-          <source type="image/webp" srcset="/assets/stock-concrete.webp 800w, /assets/stock-concrete.webp 1200w" sizes="(min-width:900px) 33vw, 100vw">
-          <img src="/assets/stock-concrete.webp" alt="Concrete & masonry coatings">
-        </picture>
-      </div>
+    <article class="svc">
+      <img src="/assets/stock-stain.webp" alt="Staining & wood finishes">
+      <h3>Staining & Wood Finishes</h3>
+    </article>
+    <article class="svc">
+      <img src="/assets/stock-concrete.webp" alt="Concrete & masonry coatings">
       <h3>Concrete & Masonry Coatings</h3>
     </article>
-
-    <article class="card">
-      <div class="media">
-        <picture>
-          <source type="image/webp" srcset="/assets/stock-drywall.webp 800w, /assets/stock-drywall.webp 1200w" sizes="(min-width:900px) 33vw, 100vw">
-          <img src="/assets/stock-drywall.webp" alt="Drywall & surface prep">
-        </picture>
-      </div>
+    <article class="svc">
+      <img src="/assets/stock-drywall.webp" alt="Drywall & surface prep">
       <h3>Drywall & Surface Prep</h3>
     </article>
-
-    <article class="card">
-      <div class="media">
-        <picture>
-          <source type="image/webp" srcset="/assets/stock-waterproof.webp 800w, /assets/stock-waterproof.webp 1200w" sizes="(min-width:900px) 33vw, 100vw">
-          <img src="/assets/stock-waterproof.webp" alt="Weatherproofing">
-        </picture>
-      </div>
+    <article class="svc">
+      <img src="/assets/stock-waterproof.webp" alt="Weatherproofing">
       <h3>Weatherproofing</h3>
     </article>
-
-    <article class="card">
-      <div class="media">
-        <picture>
-          <source type="image/webp" srcset="/assets/stock-metal.webp 800w, /assets/stock-metal.webp 1200w" sizes="(min-width:900px) 33vw, 100vw">
-          <img src="/assets/stock-metal.webp" alt="Rust-blocking metal coatings">
-        </picture>
-      </div>
-      <h3>Rust-Blocking Metal Coatings</h3>
+    <article class="svc">
+      <img src="/assets/stock-metal.webp" alt="Rust‑blocking metal coatings">
+      <h3>Rust‑Blocking Metal</h3>
     </article>
-
-    <article class="card">
-      <div class="media">
-        <picture>
-          <source type="image/webp" srcset="/assets/stock-caulking.webp 800w, /assets/stock-caulking.webp 1200w" sizes="(min-width:900px) 33vw, 100vw">
-          <img src="/assets/stock-caulking.webp" alt="Window sealing & caulking">
-        </picture>
-      </div>
+    <article class="svc">
+      <img src="/assets/stock-caulking.webp" alt="Window sealing & caulking">
       <h3>Window Sealing & Caulking</h3>
     </article>
   </div>
 </section>
 
-<!-- SINGLE, STRONG CTA -->
-<section class="section container cta-panel">
+<!-- FEATURE BAND -->
+<section class="feature container">
+  <div class="feature__img">
+    <img src="/assets/stock-exterior.webp" alt="Exterior repaint detail">
+  </div>
+  <div class="feature__copy">
+    <h2>We obsess over edges.</h2>
+    <p class="lead">Clean lines start with clean prep. We protect surfaces, manage dust, and apply proven systems so the finish looks intentional—up close and across the street.</p>
+    <a class="more" href="/services.html">Explore services →</a>
+  </div>
+</section>
+
+<!-- CTA PANEL -->
+<section class="cta-panel container">
   <div>
-    <h2>On-site within 48 hours.</h2>
-    <p class="sub">Send a few photos and the address—we’ll handle the rest.</p>
+    <h2>On‑site within 48 hours.</h2>
+    <p class="sub">Text photos and the address—we’ll take it from there.</p>
   </div>
   <div class="cta">
-    <a class="btn btn--primary" href="/contact.html">Request a Quote</a>
-    <a class="btn btn--ghost" href="tel:+15136684382">Call 513-668-4382</a>
+    <a class="btn btn--primary" href="/contact.html">Get a Quote</a>
+    <a class="btn btn--ghost" href="tel:+15136684382">Call 513‑668‑4382</a>
   </div>
 </section>
 
-<!-- SERVICE AREA — minimal -->
-<section class="section container area-min">
-  <h2>Service Area</h2>
-  <p class="sub">Butler, Hamilton, and Warren counties—plus nearby communities.</p>
-</section>
-
-<!-- STAMP STRIP (always at the bottom) -->
+<!-- STAMP AT BOTTOM -->
 <section class="stamp-strip" aria-label="DuraHaus seal">
   <div class="container stamp-strip__inner">
     <img class="stamp stamp--dark" src="/assets/seal-black.webp" alt="DuraHaus Seal">
@@ -187,13 +143,13 @@
 <footer class="site-footer">
   <div class="container cols">
     <div>
-      <div class="logo" style="margin-bottom:6px"><span>Dura</span>Haus</div>
+      <div class="wordmark"><span>Dura</span>Haus</div>
       <small>Protecting what’s built. Enhancing what’s seen.</small><br>
-      <small>Serving Cincinnati metro</small>
+      <small>Cincinnati Metro • Butler • Hamilton • Warren</small>
     </div>
     <div>
       <small><strong>Contact</strong></small><br>
-      <small><a href="tel:+15136684382">513-668-4382</a></small><br>
+      <small><a href="tel:+15136684382">513‑668‑4382</a></small><br>
       <small><a href="mailto:durahaus.solutions@gmail.com">durahaus.solutions@gmail.com</a></small><br>
       <small><a href="/contact.html">Request a quote</a></small>
     </div>
@@ -208,8 +164,5 @@
     <small>© 2025 DuraHaus Painting & Construction. All rights reserved.</small>
   </div>
 </footer>
-
-<script src="/main.js"></script>
-<a class="fab-quote" href="/contact.html" aria-label="Get a Quote">Get a Quote</a>
 </body>
 </html>
