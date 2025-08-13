@@ -8,27 +8,30 @@
   <link rel="preload" as="image" href="/assets/stock-hero.webp">
   <style>
     :root{--bg:#0a0a0a;--panel:#101010;--ink:#fff;--muted:#bdbdbd;--line:#1a1a1a;--max:1120px;--r:14px;--gap:28px}
-    *{box-sizing:border-box}html,body{height:100%}
+    *{box-sizing:border-box} html,body{height:100%}
     body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     a{color:inherit;text-decoration:none}
     img{display:block;width:100%;height:auto;background:#0d0d0d}
-    .brand img{background:transparent!important}
     .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+    /* Header (match index) */
     header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
     .brand{display:flex;align-items:center;gap:14px;min-width:0}
     .brand picture{display:block;line-height:0}
-    .brand img{height:56px;width:auto;display:block}
+    .brand img{height:56px;width:auto;background:transparent!important}
     .brand .wordmark{font-weight:800;letter-spacing:.03em;white-space:nowrap}
     .navlinks{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-left:20px}
     .pill{padding:.5rem .8rem;border:1px solid var(--line);border-radius:999px;font-size:14px}
-    .cta{background:#fff;color:#000;border-color:#fff;font-weight:700}
+    .pill--solid{background:#fff;color:#000;border-color:#fff;font-weight:700}
     .iconbtn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line);border-radius:999px}
     .iconbtn svg{width:18px;height:18px;fill:#fff}
     @media (max-width:600px){.nav{padding:10px 0}.brand img{height:44px}.pill{font-size:13px;padding:.45rem .7rem}.iconbtn{width:38px;height:38px}}
+
+    /* Hero */
     .hero{display:grid;grid-template-columns:1fr;background:#0c0c0c;border-bottom:1px solid var(--line)}
     .hero__media{position:relative;aspect-ratio:16/9;max-height:70vh;overflow:hidden}
-    .hero__media img{width:100%;height:100%;object-fit:cover;opacity:.95;filter:grayscale(1) contrast(1.05)}
+    .hero__media img{width:100%;height:100%;object-fit:cover;opacity:.95} /* removed grayscale */
     .hero__copy{padding:3rem 0}
     h1{margin:0 0 .6rem;font-size:clamp(32px,5.2vw,56px);line-height:1.05;letter-spacing:-.01em}
     h2{margin:0 0 .4rem;font-size:clamp(22px,2.2vw,28px)}
@@ -36,38 +39,53 @@
     p{margin:.25rem 0 0}
     .row{display:grid;grid-template-columns:1fr;gap:var(--gap);margin:3rem 0}
     @media (min-width:860px){.hero{grid-template-columns:1.05fr .95fr}.hero__copy{padding:4.2rem 0 4rem 2rem}.row{grid-template-columns:1.05fr .95fr;align-items:center}}
+
+    /* Cards / tiles */
     .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
     .card .pad{padding:1.1rem}
-    .why{margin:3rem auto 0}.why .cols{display:grid;gap:var(--gap)}@media (min-width:900px){.why .cols{grid-template-columns:repeat(3,1fr)}}
+    .why{margin:3rem auto 0}
+    .why .cols{display:grid;gap:var(--gap)}
+    @media (min-width:900px){.why .cols{grid-template-columns:repeat(3,1fr)}}
     .why .tile{border:1px solid var(--line);border-radius:var(--r);padding:1.2rem;background:var(--panel)}
+
+    /* CTA band */
     .band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:1.2rem;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.1rem;border-radius:12px;border:1px solid var(--line)}
-    .btn--light{background:#fff;color:#000;border-color:#fff;font-weight:700}
-    .btn--ghost{background:transparent}
-    .stack{display:flex;gap:.7rem;flex-wrap:wrap}
+
+    /* Pre-footer (stamp + mini nav) */
     .prefooter{margin:3rem auto 1.5rem;display:flex;gap:22px;align-items:center;justify-content:space-between;flex-wrap:wrap}
     .prefooter .stampwrap{display:flex;align-items:center;gap:14px}
     .prefooter img{width:128px;height:auto;opacity:.95;filter:invert(1) brightness(1.6);background:transparent}
     .prefooter .menu{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
     @media (max-width:720px){.prefooter{justify-content:center;text-align:center}.prefooter .menu{justify-content:center}}
+
+    /* Footer */
     footer{border-top:1px solid var(--line);margin-top:2rem}
     .foot{display:grid;gap:18px;align-items:center;padding:1.2rem 0;grid-template-columns:1fr}
     small{color:var(--muted)}
 
-    /* Social (prefooter) */
-    .social{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-    .social .hint{color:var(--muted);font-size:.9rem}
-    .social .iconbtn svg{width:16px;height:16px}
+    /* Contact strip */
+    .contactbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0e0e10}
+    .contactbar .row{display:flex;gap:16px;align-items:center;justify-content:flex-start;flex-wrap:wrap;margin:0;padding:14px 0}
+    .contactbar a{display:inline-flex;align-items:center;gap:8px;color:#d9d9db;font-size:15px}
+    .contactbar a:hover{color:#fff}
+    .contactbar svg{width:20px;height:20px;fill:currentColor}
+
+    /* Sticky tidy footer */
+    html, body { height: 100%; }
+    body { min-height: 100dvh; display: flex; flex-direction: column; }
+    main { flex: 1 0 auto; }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="container nav">
       <a class="brand" href="/" aria-label="DuraHaus home">
         <picture>
           <source srcset="/assets/durahaus-logo.svg" type="image/svg+xml">
           <source srcset="/assets/durahaus-logo.png" type="image/png">
-          <img src="/assets/durahaus-logo.jpg" alt="DuraHaus logo" onerror="this.closest('.brand').querySelector('.wordmark').style.display='block'">
+          <img src="/assets/durahaus-logo.jpg" alt="DuraHaus logo"
+               onerror="this.closest('.brand').querySelector('.wordmark').style.display='block'">
         </picture>
         <span class="wordmark" style="display:none">DURAHAUS</span>
       </a>
@@ -78,97 +96,121 @@
         <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
         </a>
-        <a class="pill cta" href="/quote.html">Get a Quote</a>
+        <a class="pill pill--solid" href="/quote.html">Get a Quote</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="hero__media">
-      <img src="/assets/stock-hero.webp" alt="Cincinnati high-end home exterior">
-    </div>
-    <div class="hero__copy container">
-      <h1>About DuraHaus</h1>
-      <p class="lead">Protecting what’s built. Enhancing what’s seen. We’re a Cincinnati crew focused on clean sites, reliable scheduling, and finishes that hold up in the Midwest.</p>
-      <div class="stack" style="margin-top:1.1rem">
-        <a class="btn btn--light" href="/quote.html">Get a Free Quote</a>
-        <a class="btn btn--ghost" href="/projects.html">See Projects</a>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__media">
+        <img src="/assets/stock-hero.webp" alt="Cincinnati high-end home exterior">
       </div>
-    </div>
-  </section>
+      <div class="hero__copy container">
+        <h1>About DuraHaus</h1>
+        <p class="lead">Protecting what’s built. Enhancing what’s seen. We’re a Cincinnati crew focused on clean sites, reliable scheduling, and finishes that hold up in the Midwest.</p>
+        <div class="navlinks" style="margin-top:1.1rem">
+          <a class="pill pill--solid" href="/services.html">Explore Services</a>
+        </div>
+      </div>
+    </section>
 
-  <section class="container row">
-    <div class="card"><img src="/assets/stock-exterior.webp" alt="Team at work" style="filter:grayscale(1)"></div>
-    <div>
-      <h2>Craftsmanship, Systems, Communication</h2>
-      <p class="lead">We use proven prep systems and pro-grade coatings matched to each surface—so cabinets feel factory, trim lines stay tight, and exteriors survive seasons.</p>
-      <p class="">Fully insured. Written, itemized quotes. Clear timelines. We treat your home like our own.</p>
-    </div>
-  </section>
-
-  <section class="container why">
-    <h2 style="margin-bottom:.6rem">What we stand for</h2>
-    <div class="cols">
-      <div class="tile"><h3>Clean & Respectful</h3><p class="lead">Protected floors and fixtures. Dust control and tidy jobsites.</p></div>
-      <div class="tile"><h3>On‑Time & Transparent</h3><p class="lead">Reliable schedules, daily communication, and no surprises.</p></div>
-      <div class="tile"><h3>Built to Perform</h3><p class="lead">Spec’d primers/enamels and exteriors designed for Ohio weather.</p></div>
-    </div>
-  </section>
-
-  <section class="container" style="margin:3rem auto 2rem">
-    <div class="band">
+    <!-- Story / mission -->
+    <section class="container row">
+      <div class="card">
+        <img src="/assets/stock-exterior.webp" alt="Team at work">
+      </div>
       <div>
-        <h2 style="margin:.2rem 0">Ready to start?</h2>
-        <p style="margin:.2rem 0;color:var(--muted)">Fast estimates, tidy jobsites, and results that hold up.</p>
+        <h2>Craftsmanship, Systems, Communication</h2>
+        <p class="lead">We use proven prep systems and pro-grade coatings matched to each surface—so cabinets feel factory, trim lines stay tight, and exteriors survive seasons.</p>
+        <p>Fully insured. Written, itemized quotes. Clear timelines. We treat your home like our own.</p>
       </div>
-      <div class="stack">
-        <a class="btn btn--light" href="/quote.html">Request a Quote</a>
+    </section>
+
+    <!-- Values -->
+    <section class="container why">
+      <h2 style="margin-bottom:.6rem">What we stand for</h2>
+      <div class="cols">
+        <div class="tile">
+          <h3>Clean & Respectful</h3>
+          <p class="lead">Protected floors and fixtures. Dust control and tidy jobsites.</p>
+        </div>
+        <div class="tile">
+          <h3>On-Time & Transparent</h3>
+          <p class="lead">Reliable schedules, daily communication, and no surprises.</p>
+        </div>
+        <div class="tile">
+          <h3>Built to Perform</h3>
+          <p class="lead">Spec’d primers/enamels and exteriors designed for Ohio weather.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA band -->
+    <section class="container" style="margin:3rem auto 2rem">
+      <div class="band">
+        <div>
+          <h2 style="margin:.2rem 0">Ready to start?</h2>
+          <p style="margin:.2rem 0;color:var(--muted)">Fast estimates, tidy jobsites, and results that hold up.</p>
+        </div>
+        <div class="navlinks">
+          <a class="pill pill--solid" href="/quote.html">Request a Quote</a>
+          <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1  1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pre-footer: stamp + mini nav -->
+    <div class="container prefooter">
+      <div class="stampwrap">
+        <img src="/assets/seal-white.PNG" alt="DuraHaus stamp (white)">
+      </div>
+      <nav class="menu" aria-label="Footer quick links">
+        <a href="/services.html" class="pill">Services</a>
+        <a href="/projects.html" class="pill">Projects</a>
+        <a href="/about.html" class="pill">About</a>
         <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
         </a>
-      </div>
+        <a class="pill pill--solid" href="/quote.html">Get a Quote</a>
+      </nav>
     </div>
-  </section>
 
-  
-<div class="container prefooter">
-  <div class="stampwrap">
-    <img src="/assets/seal-white.PNG" alt="DuraHaus stamp (white)">
-  </div>
+    <!-- Contact strip -->
+    <section class="contactbar">
+      <div class="container row">
+        <a href="tel:+15136684382" aria-label="Call">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
+          513-668-4382
+        </a>
+        <a href="mailto:durahaus.solutions@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
+          durahaus.solutions@gmail.com
+        </a>
+        <a class="iconbtn" href="https://www.facebook.com/share/16mxN9iVbn/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.2l-.4 3h-1.8v7A10 10 0 0 0 22 12z"/></svg>
+          Facebook
+        </a>
+        <a class="iconbtn" href="https://share.google/XiAqMLBx4gLJR31Dx" target="_blank" rel="noopener" aria-label="Google Business Profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5z"/></svg>
+          Google
+        </a>
+      </div>
+    </section>
+  </main>
 
-  <nav class="menu" aria-label="Footer quick links">
-    <a href="/services.html" class="pill">Services</a>
-    <a href="/projects.html" class="pill">Projects</a>
-    <a href="/about.html" class="pill">About</a>
-    <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
-    </a>
-    <a class="pill cta" href="/quote.html">Get a Quote</a>
-  </nav>
+  <!-- Footer -->
+  <footer>
+    <div class="container foot">
+      <small>© <span id="y"></span> DuraHaus Painting & Construction. All rights reserved.</small>
+    </div>
+  </footer>
 
-  <div class="social" aria-label="Find us on">
-    <span class="hint">Find us on:</span>
-    <a class="iconbtn" href="https://share.google/XiAqMLBx4gLJR31Dx" target="_blank" rel="noopener" aria-label="Google Business Profile">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 4.6 6.1 12 6.4 12.4.3.4.8.4 1.1 0C12.9 21 19 13.6 19 9a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>
-    </a>
-    <a class="iconbtn" href="https://www.facebook.com/share/16mxN9iVbn/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 9H15V6h-1.5C11.6 6 11 7.2 11 8.7V10H9v3h2v7h3v-7h2.1l.4-3H14v-1c0-.6.2-1 .5-1Z"/></svg>
-    </a>
-  </div>
-</div>
-
-    <nav class="menu" aria-label="Footer quick links">
-      <a href="/services.html" class="pill">Services</a>
-      <a href="/projects.html" class="pill">Projects</a>
-      <a href="/about.html" class="pill">About</a>
-      <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
-      </a>
-      <a class="pill cta" href="/quote.html">Get a Quote</a>
-    </nav>
-  </div>
-
-  <footer><div class="container foot"><small>© <span id="y"></span> DuraHaus Painting & Construction. All rights reserved.</small></div></footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
