@@ -119,6 +119,11 @@
     .carousel-dots{display:flex;gap:8px;justify-content:center;padding:8px 0 0}
     .carousel-dots button{width:8px;height:8px;border:none;border-radius:50%;background:#c7c7c7;cursor:pointer}
     .carousel-dots button[aria-current="true"]{background:#fff}
+    /* Hide the dots (keep element for JS) */
+    .carousel-dots{ display:none !important; }
+
+    /* Make the text block the only clickable area under the image */
+    .card .pad.service-link { display:block; border-top:1px solid var(--line); }
   </style>
 </head>
 <body>
@@ -188,7 +193,7 @@
       <div class="grid">
 
         <!-- Interior Painting -->
-        <a class="card" href="/services.html#interior">
+        <div class="card">
           <div class="carousel" data-carousel>
             <button class="carousel-btn prev" aria-label="Previous image" data-prev>‹</button>
             <div class="carousel-track" data-track>
@@ -199,14 +204,14 @@
             <button class="carousel-btn next" aria-label="Next image" data-next>›</button>
             <div class="carousel-dots" data-dots></div>
           </div>
-          <div class="pad">
+          <a class="pad service-link" href="/services.html#interior">
             <h3 style="margin:0 0 .25rem">Interior Painting</h3>
             <p>Walls, ceilings, trim, and cabinetry — dust-controlled and precise.</p>
-          </div>
-        </a>
+          </a>
+        </div>
 
         <!-- Exterior Painting -->
-        <a class="card" href="/services.html#exterior">
+        <div class="card">
           <div class="carousel" data-carousel>
             <button class="carousel-btn prev" aria-label="Previous image" data-prev>‹</button>
             <div class="carousel-track" data-track>
@@ -217,14 +222,14 @@
             <button class="carousel-btn next" aria-label="Next image" data-next>›</button>
             <div class="carousel-dots" data-dots></div>
           </div>
-          <div class="pad">
+          <a class="pad service-link" href="/services.html#exterior">
             <h3 style="margin:0 0 .25rem">Exterior Painting</h3>
             <p>Premium prep and coatings that handle Midwest weather.</p>
-          </div>
-        </a>
+          </a>
+        </div>
 
         <!-- Concrete Coatings -->
-        <a class="card" href="/services.html#concrete">
+        <div class="card">
           <div class="carousel" data-carousel>
             <button class="carousel-btn prev" aria-label="Previous image" data-prev>‹</button>
             <div class="carousel-track" data-track>
@@ -235,11 +240,12 @@
             <button class="carousel-btn next" aria-label="Next image" data-next>›</button>
             <div class="carousel-dots" data-dots></div>
           </div>
-          <div class="pad">
+          <a class="pad service-link" href="/services.html#concrete">
             <h3 style="margin:0 0 .25rem">Concrete Coatings</h3>
             <p>Garage, patios, and basements — durable and easy to clean.</p>
-          </div>
-        </a>
+          </a>
+        </div>
+
       </div>
     </section>
 
@@ -248,7 +254,7 @@
       <div class="grid">
 
         <!-- Cabinet Refinishing -->
-        <a class="card" href="/services.html#cabinets">
+        <div class="card">
           <div class="carousel" data-carousel>
             <button class="carousel-btn prev" aria-label="Previous image" data-prev>‹</button>
             <div class="carousel-track" data-track>
@@ -259,14 +265,14 @@
             <button class="carousel-btn next" aria-label="Next image" data-next>›</button>
             <div class="carousel-dots" data-dots></div>
           </div>
-          <div class="pad">
+          <a class="pad service-link" href="/services.html#cabinets">
             <h3 style="margin:0 0 .25rem">Cabinet Refinishing</h3>
             <p>Factory-smooth primers and hard-wearing topcoats.</p>
-          </div>
-        </a>
+          </a>
+        </div>
 
         <!-- Staining & Wood Care -->
-        <a class="card" href="/services.html#stain">
+        <div class="card">
           <div class="carousel" data-carousel>
             <button class="carousel-btn prev" aria-label="Previous image" data-prev>‹</button>
             <div class="carousel-track" data-track>
@@ -277,14 +283,14 @@
             <button class="carousel-btn next" aria-label="Next image" data-next>›</button>
             <div class="carousel-dots" data-dots></div>
           </div>
-          <div class="pad">
+          <a class="pad service-link" href="/services.html#stain">
             <h3 style="margin:0 0 .25rem">Staining & Wood Care</h3>
             <p>Decks, doors, and rails prepped and finished right.</p>
-          </div>
-        </a>
+          </a>
+        </div>
 
         <!-- Drywall & Repair -->
-        <a class="card" href="/services.html#drywall">
+        <div class="card">
           <div class="carousel" data-carousel>
             <button class="carousel-btn prev" aria-label="Previous image" data-prev>‹</button>
             <div class="carousel-track" data-track>
@@ -295,11 +301,11 @@
             <button class="carousel-btn next" aria-label="Next image" data-next>›</button>
             <div class="carousel-dots" data-dots></div>
           </div>
-          <div class="pad">
+          <a class="pad service-link" href="/services.html#drywall">
             <h3 style="margin:0 0 .25rem">Drywall & Repair</h3>
             <p>Repairs and resurfacing for flat, paint-ready surfaces.</p>
-          </div>
-        </a>
+          </a>
+        </div>
 
       </div>
     </section>
@@ -397,7 +403,7 @@
         const dotsWrap = c.querySelector('[data-dots]');
         let i = 0, startX = 0, deltaX = 0, isDragging = false;
 
-        // dots
+        // dots (created but hidden via CSS)
         slides.forEach((_, idx)=>{
           const b = document.createElement('button');
           b.type = 'button';
@@ -416,7 +422,7 @@
         function nextSlide(){ go(i+1); }
         function prevSlide(){ go(i-1); }
 
-        // prevent card link when using controls
+        // stop clicks from bubbling to the card
         [prev, next, dotsWrap, track].forEach(el=>{
           el && el.addEventListener('click', ev=>ev.stopPropagation());
         });
