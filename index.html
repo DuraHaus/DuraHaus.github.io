@@ -44,7 +44,6 @@
     /* Hero */
     .hero{display:grid;grid-template-columns:1fr;background:#0c0c0c;border-bottom:1px solid var(--line)}
     .hero__media{position:relative;aspect-ratio:16/9;max-height:70vh;overflow:hidden}
-    /* removed grayscale/contrast filter */
     .hero__media img{width:100%;height:100%;object-fit:cover;opacity:.95;}
     .hero__copy{padding:3rem 0}
     h1{margin:0 0 .6rem;font-size:clamp(32px,5.2vw,56px);line-height:1.05;letter-spacing:-.01em}
@@ -111,7 +110,7 @@
 
     /* === Minimal Carousel === */
     .carousel{position:relative;overflow:hidden}
-    .carousel-track{display:flex;transition:transform 280ms ease}
+    .carousel-track{display:flex;transition:transform 280ms ease; touch-action: pan-y;} /* <-- swipe fix */
     .carousel img{width:100%;height:340px;object-fit:cover;flex:0 0 100%}
     .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);border:none;background:rgba(0,0,0,.45);color:#fff;padding:6px 10px;border-radius:10px;cursor:pointer;z-index:2}
     .carousel-btn.prev{left:8px}.carousel-btn.next{right:8px}
@@ -165,8 +164,8 @@
           From interiors to exteriors, cabinets to concrete — we approach every job with care, craftsmanship, and materials built to perform. All to make your home more beautiful, more durable, and better protected against time and weather.
         </p>
         <div class="stack" style="margin-top:1.1rem">
-          <a class="btn btn--light" href="/quote.html">Get a Free Quote</a>
-          <a class="btn btn--ghost" href="/projects.html">See Projects</a>
+          <!-- REPLACED: one button only -->
+          <a class="btn btn--light" href="/services.html">Explore Services</a>
         </div>
       </div>
     </section>
@@ -182,7 +181,8 @@
           At DuraHaus that is our mission. We supply customers with specialized skills and knowledge in Interior/Exterior Painting, Cabinetry Finishes, Staining & Wood Finishes, Surface-Protecting Coatings, Concrete Coatings, Drywall Repair, Interior/Exterior Sealing and more.
         </p>
         <div class="stack" style="margin-top:1rem">
-          <a class="btn btn--light" href="/services.html">Explore Services</a>
+          <!-- REPLACED: About | Call Us -->
+          <a class="btn btn--light" href="/about.html">About</a>
           <a class="btn btn--ghost" href="tel:15136684382">Call Us</a>
         </div>
       </div>
