@@ -7,15 +7,18 @@
   <meta name="description" content="About DuraHaus Painting & Construction. Clean, on-time, built to perform.">
   <link rel="preload" as="image" href="/assets/stock-hero.webp">
   <style>
-    :root{--bg:#0a0a0a;--panel:#101010;--ink:#fff;--muted:#bdbdbd;--line:#1a1a1a;--max:1120px;--r:14px;--gap:28px}
+    :root{--bg:#0a0a0a; --panel:#101010; --ink:#fff; --muted:#bdbdbd; --line:#1a1a1a; --max:1120px; --r:14px; --gap:28px}
     *{box-sizing:border-box} html,body{height:100%}
-    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{margin:0;background:var(--bg);color:var(--ink);
+      font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     a{color:inherit;text-decoration:none}
     img{display:block;width:100%;height:auto;background:#0d0d0d}
     .container{max-width:var(--max);margin:0 auto;padding:0 20px}
 
     /* Header (match index) */
-    header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
+    header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.92);
+      backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
     .brand{display:flex;align-items:center;gap:14px;min-width:0}
     .brand picture{display:block;line-height:0}
@@ -24,6 +27,7 @@
     .navlinks{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-left:20px}
     .pill{padding:.5rem .8rem;border:1px solid var(--line);border-radius:999px;font-size:14px}
     .pill--solid{background:#fff;color:#000;border-color:#fff;font-weight:700}
+    .pill--ghost{background:transparent}
     .iconbtn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line);border-radius:999px}
     .iconbtn svg{width:18px;height:18px;fill:#fff}
     @media (max-width:600px){.nav{padding:10px 0}.brand img{height:44px}.pill{font-size:13px;padding:.45rem .7rem}.iconbtn{width:38px;height:38px}}
@@ -31,7 +35,7 @@
     /* Hero */
     .hero{display:grid;grid-template-columns:1fr;background:#0c0c0c;border-bottom:1px solid var(--line)}
     .hero__media{position:relative;aspect-ratio:16/9;max-height:70vh;overflow:hidden}
-    .hero__media img{width:100%;height:100%;object-fit:cover;opacity:.95} /* removed grayscale */
+    .hero__media img{width:100%;height:100%;object-fit:cover;opacity:.95}
     .hero__copy{padding:3rem 0}
     h1{margin:0 0 .6rem;font-size:clamp(32px,5.2vw,56px);line-height:1.05;letter-spacing:-.01em}
     h2{margin:0 0 .4rem;font-size:clamp(22px,2.2vw,28px)}
@@ -58,22 +62,17 @@
     .prefooter .menu{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
     @media (max-width:720px){.prefooter{justify-content:center;text-align:center}.prefooter .menu{justify-content:center}}
 
-    /* Footer */
-    footer{border-top:1px solid var(--line);margin-top:2rem}
-    .foot{display:grid;gap:18px;align-items:center;padding:1.2rem 0;grid-template-columns:1fr}
-    small{color:var(--muted)}
-
-    /* Contact strip */
+    /* Contact strip (exact match to index) */
     .contactbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0e0e10}
     .contactbar .row{display:flex;gap:16px;align-items:center;justify-content:flex-start;flex-wrap:wrap;margin:0;padding:14px 0}
     .contactbar a{display:inline-flex;align-items:center;gap:8px;color:#d9d9db;font-size:15px}
     .contactbar a:hover{color:#fff}
     .contactbar svg{width:20px;height:20px;fill:currentColor}
 
-    /* Sticky tidy footer */
-    html, body { height: 100%; }
-    body { min-height: 100dvh; display: flex; flex-direction: column; }
-    main { flex: 1 0 auto; }
+    /* Footer */
+    footer{border-top:1px solid var(--line);margin-top:2rem}
+    .foot{display:grid;gap:18px;align-items:center;padding:1.2rem 0;grid-template-columns:1fr}
+    small{color:var(--muted)}
   </style>
 </head>
 <body>
@@ -132,18 +131,9 @@
     <section class="container why">
       <h2 style="margin-bottom:.6rem">What we stand for</h2>
       <div class="cols">
-        <div class="tile">
-          <h3>Clean & Respectful</h3>
-          <p class="lead">Protected floors and fixtures. Dust control and tidy jobsites.</p>
-        </div>
-        <div class="tile">
-          <h3>On-Time & Transparent</h3>
-          <p class="lead">Reliable schedules, daily communication, and no surprises.</p>
-        </div>
-        <div class="tile">
-          <h3>Built to Perform</h3>
-          <p class="lead">Spec’d primers/enamels and exteriors designed for Ohio weather.</p>
-        </div>
+        <div class="tile"><h3>Clean & Respectful</h3><p class="lead">Protected floors and fixtures. Dust control and tidy jobsites.</p></div>
+        <div class="tile"><h3>On-Time & Transparent</h3><p class="lead">Reliable schedules, daily communication, and no surprises.</p></div>
+        <div class="tile"><h3>Built to Perform</h3><p class="lead">Spec’d primers/enamels and exteriors designed for Ohio weather.</p></div>
       </div>
     </section>
 
@@ -157,7 +147,7 @@
         <div class="navlinks">
           <a class="pill pill--solid" href="/quote.html">Request a Quote</a>
           <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1  1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
           </a>
         </div>
       </div>
@@ -179,7 +169,7 @@
       </nav>
     </div>
 
-    <!-- Contact strip -->
+    <!-- Contact strip (phone, email, socials) -->
     <section class="contactbar">
       <div class="container row">
         <a href="tel:+15136684382" aria-label="Call">
@@ -190,11 +180,11 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
           durahaus.solutions@gmail.com
         </a>
-        <a class="iconbtn" href="https://www.facebook.com/share/16mxN9iVbn/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+        <a href="https://www.facebook.com/durahaus" target="_blank" rel="noopener" aria-label="Facebook">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.2l-.4 3h-1.8v7A10 10 0 0 0 22 12z"/></svg>
           Facebook
         </a>
-        <a class="iconbtn" href="https://share.google/XiAqMLBx4gLJR31Dx" target="_blank" rel="noopener" aria-label="Google Business Profile">
+        <a href="https://share.google/EBNrz9YGxu5CfbmpO" target="_blank" rel="noopener" aria-label="Google Business Profile">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5z"/></svg>
           Google
         </a>
@@ -209,8 +199,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
