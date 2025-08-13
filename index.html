@@ -1,45 +1,468 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DuraHaus — Home</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="assets/css/additions.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DuraHaus — Painting and Construction</title>
+  <meta name="description" content="Interior & exterior painting, cabinets, stain, concrete coatings, drywall and sealing. Clean, on-time, built to perform.">
+  <link rel="preload" as="image" href="/assets/stock-hero.webp">
+  <style>
+    :root{
+      --bg:#0a0a0a; --panel:#101010; --ink:#ffffff; --muted:#bdbdbd;
+      --line:#1a1a1a; --max:1120px; --r:14px; --gap:28px;
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--ink);
+      font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+    a{color:inherit;text-decoration:none}
+    img{display:block;width:100%;height:auto;background:#0d0d0d}
+    .brand img{background:transparent!important}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.92);
+      backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:14px;min-width:0}
+    .brand picture{display:block;line-height:0}
+    .brand img{height:56px;width:auto;display:block}
+    .brand .wordmark{font-weight:800;letter-spacing:.03em;white-space:nowrap}
+
+    .navlinks{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-left:20px}
+    .pill{padding:.5rem .8rem;border:1px solid var(--line);border-radius:999px;font-size:14px}
+    .cta{background:#fff;color:#000;border-color:#fff;font-weight:700}
+    .iconbtn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line);border-radius:999px}
+    .iconbtn svg{width:18px;height:18px;fill:#fff}
+    @media (max-width:600px){
+      .nav{padding:10px 0}
+      .brand img{height:44px}
+      .pill{font-size:13px;padding:.45rem .7rem}
+      .iconbtn{width:38px;height:38px}
+    }
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr;background:#0c0c0c;border-bottom:1px solid var(--line)}
+    .hero__media{position:relative;aspect-ratio:16/9;max-height:70vh;overflow:hidden}
+    /* removed grayscale/contrast filter */
+    .hero__media img{width:100%;height:100%;object-fit:cover;opacity:.95;}
+    .hero__copy{padding:3rem 0}
+    h1{margin:0 0 .6rem;font-size:clamp(32px,5.2vw,56px);line-height:1.05;letter-spacing:-.01em}
+    .lead{color:var(--muted);font-size:clamp(16px,1.8vw,19px)}
+    .row{display:grid;grid-template-columns:1fr;gap:var(--gap);margin:3rem 0}
+    @media (min-width:860px){
+      .hero{grid-template-columns:1.05fr .95fr}
+      .hero__copy{padding:4.2rem 0 4rem 2rem}
+      .row{grid-template-columns:1.05fr .95fr;align-items:center}
+    }
+
+    /* Cards / grids */
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+    .card .pad{padding:1.1rem}
+    h2{margin:0 0 .4rem;font-size:clamp(22px,2.2vw,28px)}
+    p{margin:.25rem 0 0}
+    .grid{display:grid;gap:var(--gap);grid-template-columns:1fr}
+    @media (min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+
+    /* Why */
+    .why{margin:3rem auto 0}
+    .why .cols{display:grid;gap:var(--gap)}
+    @media (min-width:900px){.why .cols{grid-template-columns:repeat(3,1fr)}}
+    .why .tile{border:1px solid var(--line);border-radius:var(--r);padding:1.2rem;background:var(--panel)}
+    .why h3{margin:.1rem 0 .4rem;font-size:1.1rem}
+
+    /* FAQ */
+    .faq{margin:3rem auto}
+    .faq details{border:1px solid var(--line);border-radius:12px;padding:.9rem 1.1rem;background:var(--panel)}
+    .faq details+details{margin-top:12px}
+    .faq summary{cursor:pointer;list-style:none;font-weight:700}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq .a{color:var(--muted);margin:.6rem 0 0}
+
+    /* CTA band */
+    .band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:1.2rem;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+
+    /* Pre-footer (stamp + mini nav) */
+    .prefooter{margin:3rem auto 1.5rem;display:flex;gap:22px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .prefooter .stampwrap{display:flex;align-items:center;gap:14px}
+    .prefooter img{width:128px;height:auto;opacity:.95;filter:invert(1) brightness(1.6);background:transparent}
+    .prefooter .menu{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    @media (max-width:720px){
+      .prefooter{justify-content:center;text-align:center}
+      .prefooter .menu{justify-content:center}
+    }
+
+    /* Footer */
+    footer{border-top:1px solid var(--line);margin-top:2rem}
+    .foot{display:grid;gap:18px;align-items:center;padding:1.2rem 0;grid-template-columns:1fr}
+    small{color:var(--muted)}
+
+    /* Contact strip (above footer) */
+    .contactbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0e0e10}
+    .contactbar .row{display:flex;gap:16px;align-items:center;justify-content:flex-start;flex-wrap:wrap;margin:0;padding:14px 0}
+    .contactbar a{display:inline-flex;align-items:center;gap:8px;color:#d9d9db;font-size:15px}
+    .contactbar a:hover{color:#fff}
+    .contactbar svg{width:20px;height:20px;fill:currentColor}
+
+    /* Sticky tidy footer for short pages (optional) */
+    html, body { height: 100%; }
+    body { min-height: 100dvh; display: flex; flex-direction: column; }
+    main { flex: 1 0 auto; }
+
+    /* === Minimal Carousel === */
+    .carousel{position:relative;overflow:hidden}
+    .carousel-track{display:flex;transition:transform 280ms ease}
+    .carousel img{width:100%;height:340px;object-fit:cover;flex:0 0 100%}
+    .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);border:none;background:rgba(0,0,0,.45);color:#fff;padding:6px 10px;border-radius:10px;cursor:pointer;z-index:2}
+    .carousel-btn.prev{left:8px}.carousel-btn.next{right:8px}
+    .carousel-btn:hover{background:rgba(0,0,0,.65)}
+    .carousel-dots{display:flex;gap:8px;justify-content:center;padding:8px 0 0}
+    .carousel-dots button{width:8px;height:8px;border:none;border-radius:50%;background:#c7c7c7;cursor:pointer}
+    .carousel-dots button[aria-current="true"]{background:#fff}
+  </style>
 </head>
 <body>
-<!-- existing header/nav ... -->
 
-<style>
-/* (kept your hero rules but removed grayscale) */
-.hero__media img{width:100%;height:100%;object-fit:cover;opacity:.95;}
-</style>
-
-<!-- page content ... your service cards/images remain -->
-<!-- The carousel script will auto-wrap groups of service images; you can also
-     use the explicit structure if you prefer (same as I showed before). -->
-
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <a class="brand" href="/" aria-label="DuraHaus Home">DuraHaus</a>
-    <nav class="footer-links">
-      <a href="tel:+15136684382" aria-label="Call DuraHaus">513-668-4382</a>
-      <a href="mailto:durahaus.solutions@gmail.com" aria-label="Email DuraHaus">durahaus.solutions@gmail.com</a>
-      <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener" aria-label="Facebook" class="icon-link">
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.2l-.4 3h-1.8v7A10 10 0 0 0 22 12z"/></svg>
-        <span>Facebook</span>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="DuraHaus home">
+        <picture>
+          <source srcset="/assets/durahaus-logo.svg" type="image/svg+xml">
+          <source srcset="/assets/durahaus-logo.png" type="image/png">
+          <img src="/assets/durahaus-logo.jpg" alt="DuraHaus logo"
+               onerror="this.closest('.brand').querySelector('.wordmark').style.display='block'">
+        </picture>
+        <span class="wordmark" style="display:none">DURAHAUS</span>
       </a>
-      <a href="https://www.google.com/maps/place/?q=place_id:YOUR_PLACE_ID" target="_blank" rel="noopener" aria-label="Google Business Profile" class="icon-link">
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5z"/></svg>
-        <span>Google</span>
-      </a>
-    </nav>
-    <p class="legal">© <span id="year"></span> DuraHaus Painting & Construction. All rights reserved.</p>
-  </div>
-</footer>
 
-<script src="main.js"></script>
-<script src="assets/js/additions.js"></script>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="/services.html" class="pill">Services</a>
+        <a href="/projects.html" class="pill">Projects</a>
+        <a href="/about.html" class="pill">About</a>
+        <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
+        </a>
+        <a class="pill cta" href="/quote.html">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__media">
+        <img src="/assets/stock-hero.webp" alt="Cincinnati high-end home exterior">
+      </div>
+      <div class="hero__copy container">
+        <h1>Professional Painting. Clean, On-Time.<br>Protecting What’s Built.</h1>
+        <p class="lead">
+          From interiors to exteriors, cabinets to concrete — we approach every job with care, craftsmanship, and materials built to perform. All to make your home more beautiful, more durable, and better protected against time and weather.
+        </p>
+        <div class="stack" style="margin-top:1.1rem">
+          <a class="btn btn--light" href="/quote.html">Get a Free Quote</a>
+          <a class="btn btn--ghost" href="/projects.html">See Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission -->
+    <section class="container row">
+      <div class="card">
+        <img src="/assets/stock-exterior.webp" alt="Exterior detail">
+      </div>
+      <div>
+        <h2>Protecting What’s Built. <br>Enhancing What’s Seen.</h2>
+        <p class="lead">
+          At DuraHaus that is our mission. We supply customers with specialized skills and knowledge in Interior/Exterior Painting, Cabinetry Finishes, Staining & Wood Finishes, Surface-Protecting Coatings, Concrete Coatings, Drywall Repair, Interior/Exterior Sealing and more.
+        </p>
+        <div class="stack" style="margin-top:1rem">
+          <a class="btn btn--light" href="/services.html">Explore Services</a>
+          <a class="btn btn--ghost" href="tel:15136684382">Call Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services grid -->
+    <section class="container" style="margin-top:2rem">
+      <div class="grid">
+
+        <!-- Interior Painting -->
+        <a class="card" href="/services.html#interior">
+          <div class="carousel" data-carousel>
+            <button class="carousel-btn prev" aria-label="Previous image" data-prev>‹</button>
+            <div class="carousel-track" data-track>
+              <img src="/assets/stock-interior.webp" alt="Interior painting 1">
+              <img src="/assets/stock-interior.webp" alt="Interior painting 2">
+              <img src="/assets/stock-interior.webp" alt="Interior painting 3">
+            </div>
+            <button class="carousel-btn next" aria-label="Next image" data-next>›</button>
+            <div class="carousel-dots" data-dots></div>
+          </div>
+          <div class="pad">
+            <h3 style="margin:0 0 .25rem">Interior Painting</h3>
+            <p>Walls, ceilings, trim, and cabinetry — dust-controlled and precise.</p>
+          </div>
+        </a>
+
+        <!-- Exterior Painting -->
+        <a class="card" href="/services.html#exterior">
+          <div class="carousel" data-carousel>
+            <button class="carousel-btn prev" aria-label="Previous image" data-prev>‹</button>
+            <div class="carousel-track" data-track>
+              <img src="/assets/stock-exterior.webp" alt="Exterior painting 1">
+              <img src="/assets/stock-exterior.webp" alt="Exterior painting 2">
+              <img src="/assets/stock-exterior.webp" alt="Exterior painting 3">
+            </div>
+            <button class="carousel-btn next" aria-label="Next image" data-next>›</button>
+            <div class="carousel-dots" data-dots></div>
+          </div>
+          <div class="pad">
+            <h3 style="margin:0 0 .25rem">Exterior Painting</h3>
+            <p>Premium prep and coatings that handle Midwest weather.</p>
+          </div>
+        </a>
+
+        <!-- Concrete Coatings -->
+        <a class="card" href="/services.html#concrete">
+          <div class="carousel" data-carousel>
+            <button class="carousel-btn prev" aria-label="Previous image" data-prev>‹</button>
+            <div class="carousel-track" data-track>
+              <img src="/assets/stock-concrete.webp" alt="Concrete coatings 1">
+              <img src="/assets/stock-concrete.webp" alt="Concrete coatings 2">
+              <img src="/assets/stock-concrete.webp" alt="Concrete coatings 3">
+            </div>
+            <button class="carousel-btn next" aria-label="Next image" data-next>›</button>
+            <div class="carousel-dots" data-dots></div>
+          </div>
+          <div class="pad">
+            <h3 style="margin:0 0 .25rem">Concrete Coatings</h3>
+            <p>Garage, patios, and basements — durable and easy to clean.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- More services -->
+    <section class="container" style="margin-top:2rem">
+      <div class="grid">
+
+        <!-- Cabinet Refinishing -->
+        <a class="card" href="/services.html#cabinets">
+          <div class="carousel" data-carousel>
+            <button class="carousel-btn prev" aria-label="Previous image" data-prev>‹</button>
+            <div class="carousel-track" data-track>
+              <img src="/assets/stock-cabinets.webp" alt="Cabinet refinishing 1">
+              <img src="/assets/stock-cabinets.webp" alt="Cabinet refinishing 2">
+              <img src="/assets/stock-cabinets.webp" alt="Cabinet refinishing 3">
+            </div>
+            <button class="carousel-btn next" aria-label="Next image" data-next>›</button>
+            <div class="carousel-dots" data-dots></div>
+          </div>
+          <div class="pad">
+            <h3 style="margin:0 0 .25rem">Cabinet Refinishing</h3>
+            <p>Factory-smooth primers and hard-wearing topcoats.</p>
+          </div>
+        </a>
+
+        <!-- Staining & Wood Care -->
+        <a class="card" href="/services.html#stain">
+          <div class="carousel" data-carousel>
+            <button class="carousel-btn prev" aria-label="Previous image" data-prev>‹</button>
+            <div class="carousel-track" data-track>
+              <img src="/assets/stock-stain.webp" alt="Staining and wood care 1">
+              <img src="/assets/stock-stain.webp" alt="Staining and wood care 2">
+              <img src="/assets/stock-stain.webp" alt="Staining and wood care 3">
+            </div>
+            <button class="carousel-btn next" aria-label="Next image" data-next>›</button>
+            <div class="carousel-dots" data-dots></div>
+          </div>
+          <div class="pad">
+            <h3 style="margin:0 0 .25rem">Staining & Wood Care</h3>
+            <p>Decks, doors, and rails prepped and finished right.</p>
+          </div>
+        </a>
+
+        <!-- Drywall & Repair -->
+        <a class="card" href="/services.html#drywall">
+          <div class="carousel" data-carousel>
+            <button class="carousel-btn prev" aria-label="Previous image" data-prev>‹</button>
+            <div class="carousel-track" data-track>
+              <img src="/assets/stock-drywall.webp" alt="Drywall repair 1">
+              <img src="/assets/stock-drywall.webp" alt="Drywall repair 2">
+              <img src="/assets/stock-drywall.webp" alt="Drywall repair 3">
+            </div>
+            <button class="carousel-btn next" aria-label="Next image" data-next>›</button>
+            <div class="carousel-dots" data-dots></div>
+          </div>
+          <div class="pad">
+            <h3 style="margin:0 0 .25rem">Drywall & Repair</h3>
+            <p>Repairs and resurfacing for flat, paint-ready surfaces.</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container faq">
+      <h2 style="margin-bottom:.6rem">FAQs</h2>
+      <details><summary>Do you offer free estimates?</summary>
+        <div class="a">Yes. We can visit on-site within 48 hours in most cases and provide a written, itemized quote.</div>
+      </details>
+      <details><summary>How soon can you start?</summary>
+        <div class="a">Scheduling depends on scope and season. Smaller interior projects can often begin within 1–2 weeks.</div>
+      </details>
+      <details><summary>What materials do you use?</summary>
+        <div class="a">We spec pro-grade primers, enamels, and exterior coatings matched to each substrate for durability and finish quality.</div>
+      </details>
+      <details><summary>Are you insured and do you provide a warranty?</summary>
+        <div class="a">Yes—fully insured. We include a workmanship warranty with every project. Details are listed on your written quote.</div>
+      </details>
+    </section>
+
+    <!-- CTA band -->
+    <section class="container" style="margin:3rem auto 2rem">
+      <div class="band">
+        <div>
+          <h2 style="margin:.2rem 0">Ready to start?</h2>
+          <p style="margin:.2rem 0;color:var(--muted)">Fast estimates, tidy jobsites, and results that hold up.</p>
+        </div>
+        <div class="stack">
+          <a class="btn btn--light" href="/quote.html">Request a Quote</a>
+          <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pre-footer: stamp + mini nav -->
+    <div class="container prefooter">
+      <div class="stampwrap">
+        <img src="/assets/seal-white.PNG" alt="DuraHaus stamp (white)">
+      </div>
+      <nav class="menu" aria-label="Footer quick links">
+        <a href="/services.html" class="pill">Services</a>
+        <a href="/projects.html" class="pill">Projects</a>
+        <a href="/about.html" class="pill">About</a>
+        <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
+        </a>
+        <a class="pill cta" href="/quote.html">Get a Quote</a>
+      </nav>
+    </div>
+
+    <!-- Contact strip (phone, email, socials) -->
+    <section class="contactbar">
+      <div class="container row">
+        <a href="tel:+15136684382" aria-label="Call">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
+          513-668-4382
+        </a>
+        <a href="mailto:durahaus.solutions@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
+          durahaus.solutions@gmail.com
+        </a>
+        <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.2l-.4 3h-1.8v7A10 10 0 0 0 22 12z"/></svg>
+          Facebook
+        </a>
+        <a href="https://www.google.com/maps/place/?q=place_id:YOUR_PLACE_ID" target="_blank" rel="noopener" aria-label="Google Business Profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5z"/></svg>
+          Google
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container foot">
+      <small>© <span id="y"></span> DuraHaus Painting & Construction. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Carousel JS (vanilla)
+    (function(){
+      const carousels = document.querySelectorAll('[data-carousel]');
+      carousels.forEach((c)=>{
+        const track = c.querySelector('[data-track]');
+        const slides = [...track.children];
+        const prev = c.querySelector('[data-prev]');
+        const next = c.querySelector('[data-next]');
+        const dotsWrap = c.querySelector('[data-dots]');
+        let i = 0, startX = 0, deltaX = 0, isDragging = false;
+
+        // dots
+        slides.forEach((_, idx)=>{
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.setAttribute('aria-label', 'Go to slide '+(idx+1));
+          b.addEventListener('click', (e)=>{ e.stopPropagation(); go(idx); });
+          dotsWrap.appendChild(b);
+        });
+
+        function update(){
+          track.style.transform = `translateX(${i * -100}%)`;
+          [...dotsWrap.children].forEach((d, di)=> d.setAttribute('aria-current', di===i));
+          if (prev) prev.style.visibility = (i===0)?'hidden':'visible';
+          if (next) next.style.visibility = (i===slides.length-1)?'hidden':'visible';
+        }
+        function go(n){ i = Math.max(0, Math.min(slides.length-1, n)); update(); }
+        function nextSlide(){ go(i+1); }
+        function prevSlide(){ go(i-1); }
+
+        // prevent card link when using controls
+        [prev, next, dotsWrap, track].forEach(el=>{
+          el && el.addEventListener('click', ev=>ev.stopPropagation());
+        });
+
+        prev && prev.addEventListener('click', prevSlide);
+        next && next.addEventListener('click', nextSlide);
+
+        // touch / drag
+        track.addEventListener('touchstart', onStart, {passive:true});
+        track.addEventListener('mousedown', onStart);
+
+        function onStart(e){
+          isDragging = true;
+          startX = getX(e);
+          deltaX = 0;
+          document.addEventListener('touchmove', onMove, {passive:false});
+          document.addEventListener('mousemove', onMove);
+          document.addEventListener('touchend', onEnd);
+          document.addEventListener('mouseup', onEnd);
+        }
+        function onMove(e){
+          if(!isDragging) return;
+          deltaX = getX(e) - startX;
+          track.style.transition = 'none';
+          const pct = (deltaX / track.clientWidth) * 100;
+          track.style.transform = `translateX(calc(${i * -100}% + ${pct}%))`;
+          e.preventDefault?.();
+        }
+        function onEnd(){
+          track.style.transition = '';
+          if(Math.abs(deltaX) > track.clientWidth * 0.15){
+            if(deltaX < 0) nextSlide(); else prevSlide();
+          } else {
+            update();
+          }
+          isDragging = false;
+          document.removeEventListener('touchmove', onMove);
+          document.removeEventListener('mousemove', onMove);
+          document.removeEventListener('touchend', onEnd);
+          document.removeEventListener('mouseup', onEnd);
+        }
+        function getX(e){ return (e.touches && e.touches[0]?.clientX) ?? e.clientX; }
+
+        update();
+      });
+    })();
+  </script>
 </body>
 </html>
