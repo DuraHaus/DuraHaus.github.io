@@ -7,38 +7,29 @@
   <meta name="description" content="Request a professional painting quote from DuraHaus. Fast estimates, tidy jobsites, results that last.">
   <link rel="preload" as="image" href="/assets/stock-hero.webp">
   <style>
-    :root{
-      --bg:#0a0a0a; --panel:#101010; --ink:#ffffff; --muted:#bdbdbd;
-      --line:#1a1a1a; --max:1120px; --r:14px; --gap:28px;
-    }
+    :root{--bg:#0a0a0a; --panel:#101010; --ink:#ffffff; --muted:#bdbdbd; --line:#1a1a1a; --max:1120px; --r:14px; --gap:28px}
     *{box-sizing:border-box} html,body{height:100%}
     body{margin:0;background:var(--bg);color:var(--ink);
       font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
       -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
     a{color:inherit;text-decoration:none}
-    img{display:block;width:100%;height:auto;background:#0d0d0d;filter:none!important}
-    .brand img{background:transparent!important}
+    img{display:block;width:100%;height:auto;background:#0d0d0d}
     .container{max-width:var(--max);margin:0 auto;padding:0 20px}
 
-    /* Header (matches index) */
+    /* Header (match index) */
     header{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.92);
       backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
     .brand{display:flex;align-items:center;gap:14px;min-width:0}
     .brand picture{display:block;line-height:0}
-    .brand img{height:56px;width:auto;display:block}
+    .brand img{height:56px;width:auto;background:transparent!important}
     .brand .wordmark{font-weight:800;letter-spacing:.03em;white-space:nowrap}
     .navlinks{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-left:20px}
     .pill{padding:.5rem .8rem;border:1px solid var(--line);border-radius:999px;font-size:14px}
-    .cta{background:#fff;color:#000;border-color:#fff;font-weight:700}
+    .pill--solid{background:#fff;color:#000;border-color:#fff;font-weight:700}
     .iconbtn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line);border-radius:999px}
     .iconbtn svg{width:18px;height:18px;fill:#fff}
-    @media (max-width:600px){
-      .nav{padding:10px 0}
-      .brand img{height:44px}
-      .pill{font-size:13px;padding:.45rem .7rem}
-      .iconbtn{width:38px;height:38px}
-    }
+    @media (max-width:600px){.nav{padding:10px 0}.brand img{height:44px}.pill{font-size:13px;padding:.45rem .7rem}.iconbtn{width:38px;height:38px}}
 
     /* Page header */
     .pagehead{border-bottom:1px solid var(--line);background:#0c0c0c}
@@ -46,7 +37,7 @@
     .pagehead h1{margin:0;padding:2.2rem 0;font-size:clamp(30px,4.6vw,48px);line-height:1.08;letter-spacing:-.01em}
     .pagehead p{color:var(--muted);margin:-8px 0 22px}
 
-    /* Cards / layout */
+    /* Layout */
     .grid{display:grid;gap:var(--gap);grid-template-columns:1fr}
     @media (min-width:900px){.grid{grid-template-columns:1.15fr .85fr}}
     .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
@@ -62,12 +53,16 @@
     /* Pre-footer (stamp + mini nav) */
     .prefooter{margin:3rem auto 1.5rem;display:flex;gap:22px;align-items:center;justify-content:space-between;flex-wrap:wrap}
     .prefooter .stampwrap{display:flex;align-items:center;gap:14px}
-    .prefooter img{width:128px;height:auto;opacity:.95;filter:invert(1) brightness(1.6) !important;background:transparent}
+    .prefooter img{width:128px;height:auto;opacity:.95;filter:invert(1) brightness(1.6);background:transparent}
     .prefooter .menu{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-    @media (max-width:720px){
-      .prefooter{justify-content:center;text-align:center}
-      .prefooter .menu{justify-content:center}
-    }
+    @media (max-width:720px){.prefooter{justify-content:center;text-align:center}.prefooter .menu{justify-content:center}}
+
+    /* Contact strip (match index) */
+    .contactbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0e0e10}
+    .contactbar .row{display:flex;gap:16px;align-items:center;justify-content:flex-start;flex-wrap:wrap;margin:0;padding:14px 0}
+    .contactbar a{display:inline-flex;align-items:center;gap:8px;color:#d9d9db;font-size:15px}
+    .contactbar a:hover{color:#fff}
+    .contactbar svg{width:20px;height:20px;fill:currentColor}
 
     /* Footer */
     footer{border-top:1px solid var(--line);margin-top:2rem}
@@ -89,7 +84,6 @@
         </picture>
         <span class="wordmark" style="display:none">DURAHAUS</span>
       </a>
-
       <nav class="navlinks" aria-label="Primary">
         <a href="/services.html" class="pill">Services</a>
         <a href="/projects.html" class="pill">Projects</a>
@@ -97,7 +91,7 @@
         <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
         </a>
-        <a class="pill cta" href="/quote.html">Get a Quote</a>
+        <a class="pill pill--solid" href="/quote.html">Get a Quote</a>
       </nav>
     </div>
   </header>
@@ -121,30 +115,15 @@
 
           <div class="list">
             <div class="item">
-              <div>
-                <strong>Call</strong><br>
-                <span class="lead">(513) 668-4382</span>
-              </div>
-              <div class="mini">
-                <a href="tel:15136684382" class="pill">Call</a>
-              </div>
+              <div><strong>Call</strong><br><span class="lead">(513) 668-4382</span></div>
+              <div class="mini"><a href="tel:15136684382" class="pill">Call</a></div>
             </div>
-
             <div class="item">
-              <div>
-                <strong>Text</strong><br>
-                <span class="lead">(513) 668-4382</span>
-              </div>
-              <div class="mini">
-                <a href="sms:15136684382" class="pill">Text</a>
-              </div>
+              <div><strong>Text</strong><br><span class="lead">(513) 668-4382</span></div>
+              <div class="mini"><a href="sms:15136684382" class="pill">Text</a></div>
             </div>
-
             <div class="item">
-              <div>
-                <strong>Email</strong><br>
-                <span class="lead">durahaus.solutions@gmail.com</span>
-              </div>
+              <div><strong>Email</strong><br><span class="lead">durahaus.solutions@gmail.com</span></div>
               <div class="mini">
                 <a class="pill" href="mailto:durahaus.solutions@gmail.com?subject=Quote%20Request%20—%20DuraHaus&body=Hi%20DuraHaus%2C%0A%0AProject%20type%3A%20Interior%20%2F%20Exterior%20%2F%20Cabinets%20%2F%20Concrete%20%2F%20Other%0AAddress%20(city%2Farea)%3A%0AIdeal%20timing%3A%0ADetails%3A%0A%0AThanks!">Email</a>
               </div>
@@ -171,7 +150,7 @@
     </div>
   </section>
 
-  <!-- Pre-footer -->
+  <!-- Pre-footer: stamp + mini nav -->
   <div class="container prefooter">
     <div class="stampwrap">
       <img src="/assets/seal-white.PNG" alt="DuraHaus stamp (white)">
@@ -180,14 +159,34 @@
       <a href="/services.html" class="pill">Services</a>
       <a href="/projects.html" class="pill">Projects</a>
       <a href="/about.html" class="pill">About</a>
-      <a href="https://www.facebook.com/profile.php?id=61566817579160" class="pill" target="_blank">Facebook</a>
-      <a href="https://g.co/kgs/jvg6U7V" class="pill" target="_blank">Google Profile</a>
       <a class="iconbtn" href="tel:15136684382" aria-label="Call DuraHaus">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
       </a>
-      <a class="pill cta" href="/quote.html">Get a Quote</a>
+      <a class="pill pill--solid" href="/quote.html">Get a Quote</a>
     </nav>
   </div>
+
+  <!-- Contact strip (phone, email, socials) -->
+  <section class="contactbar">
+    <div class="container row">
+      <a href="tel:+15136684382" aria-label="Call">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2c1.2 2.4 3.1 4.3 5.5 5.5l1.8-1.8c.3-.3.7-.4 1.1-.3 1 .3 2 .5 3 .5.6 0 1 .4 1 1v3.1c0 .6-.4 1-1 1C10.3 19.2 4.8 13.7 4.8 6.1c0-.6.4-1 1-1H9c.6 0 1 .4 1 1 0 1 .2 2 .5 3 .1.4 0 .8-.3 1.1l-1.6 2z"/></svg>
+        513-668-4382
+      </a>
+      <a href="mailto:durahaus.solutions@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
+        durahaus.solutions@gmail.com
+      </a>
+      <a href="https://www.facebook.com/durahaus" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.2l-.4 3h-1.8v7A10 10 0 0 0 22 12z"/></svg>
+        Facebook
+      </a>
+      <a href="https://share.google/EBNrz9YGxu5CfbmpO" target="_blank" rel="noopener" aria-label="Google Business Profile">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5z"/></svg>
+        Google
+      </a>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
