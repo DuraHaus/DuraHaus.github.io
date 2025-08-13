@@ -1,0 +1,60 @@
+/* === DuraHaus Additions (carousel, footer, gallery) === */
+.service-card { border: 1px solid #e6e6e6; border-radius: 12px; padding: 16px; background:#fff }
+.service-card h3 { margin: 0 0 12px }
+
+/* Carousel */
+.carousel { position: relative; overflow: hidden; border-radius: 10px; }
+.carousel-track { display: flex; transition: transform 280ms ease; touch-action: pan-y; }
+.carousel img { width: 100%; flex: 0 0 100%; height: 240px; object-fit: cover; display: block; }
+.carousel-btn { 
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+  border: none; background: rgba(0,0,0,.45); color: #fff; padding: 8px 12px;
+  border-radius: 8px; cursor: pointer; font-size: 20px; line-height: 1;
+}
+.carousel-btn:hover { background: rgba(0,0,0,.6); }
+.carousel-btn.prev { left: 8px; }
+.carousel-btn.next { right: 8px; }
+.carousel-dots { display:flex; gap:8px; justify-content:center; padding:10px 0 0 }
+.carousel-dots button{
+  width:8px;height:8px;border-radius:50%;border:none;background:#c7c7c7;cursor:pointer
+}
+.carousel-dots button[aria-current="true"]{ background:#333 }
+@media (min-width: 900px){ .carousel img{ height: 300px } }
+
+/* Footer */
+.site-footer{ background:#0e0e10; color:#d9d9db; margin-top:48px }
+.footer-inner{ max-width:1100px; margin:0 auto; padding:28px 16px; display:grid; gap:14px }
+.site-footer .brand{ color:#fff; font-weight:700; letter-spacing:.3px; text-decoration:none; font-size:18px }
+.footer-links{ display:flex; flex-wrap:wrap; gap:14px; align-items:center }
+.footer-links a{ color:#d9d9db; text-decoration:none; display:inline-flex; gap:8px; align-items:center }
+.footer-links a:hover{ color:#ffffff }
+.legal{ opacity:.7; font-size:13px; margin-top:6px }
+
+/* Gallery */
+.section h2{ margin: 0 0 8px }
+.gallery-grid{
+  display:grid; gap:12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.gallery-grid img{
+  width:100%; height:180px; object-fit:cover; border-radius:10px; cursor:pointer
+}
+@media(min-width:700px){
+  .gallery-grid{ grid-template-columns: repeat(3, 1fr) }
+  .gallery-grid img{ height:220px }
+}
+@media(min-width:1000px){
+  .gallery-grid{ grid-template-columns: repeat(4, 1fr) }
+  .gallery-grid img{ height:220px }
+}
+/* modal */
+.modal{
+  position:fixed; inset:0; background:rgba(0,0,0,.8);
+  display:none; align-items:center; justify-content:center; padding:24px; z-index:9999;
+}
+.modal.open{ display:flex }
+.modal img{ max-width:92vw; max-height:85vh; border-radius:12px }
+.modal-close{
+  position:absolute; top:16px; right:16px; font-size:28px; line-height:1;
+  border:none; background:transparent; color:#fff; cursor:pointer
+}
